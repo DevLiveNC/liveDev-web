@@ -37,7 +37,7 @@ const About = () => {
             </span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            5+ yıllık deneyimimle modern web teknolojileri kullanarak işletmeniz için en iyi çözümleri sunuyorum
+            8 yıllık kodlama deneyimim ve 3 yıllık profesyonel web geliştirme tecrübemle, işletmeden bireye her projeye özel çözümler sunuyorum
           </p>
         </div>
 
@@ -53,14 +53,17 @@ const About = () => {
                 </div>
               </div>
               <div className="flex-1 text-center md:text-left">
-                <h3 className="text-2xl font-bold text-white mb-3">Profesyonel Web Geliştirici</h3>
+                <h3 className="text-2xl font-bold text-white mb-3">
+                  Yaşar <span className="text-gray-400 font-normal text-lg">· Live Kırmızıyüz</span>
+                </h3>
+                <p className="text-gray-400 text-sm mb-3">Web Geliştirici · Backend Coder · Full-Stack · Freelance</p>
                 <p className="text-gray-300 leading-relaxed mb-4">
-                  Merhaba! Ben tutkulu bir web geliştiriciyim ve işletmelerin dijital dünyada güçlü bir varlık oluşturmasına yardımcı oluyorum. 
-                  Her proje için özel çözümler üreterek, müşterilerimin hedeflerine ulaşmasını sağlıyorum.
+                  Merhaba! Ben Yaşar — script dünyasında sekiz, web geliştirmede üç yılı geride bıraktım. 
+                  Şirket sitesinden mağazaya, kurs platformundan kişisel bloga; FiveM gibi niş sektörlerdeki detaylı kodlamadan ajans projelerine kadar freelance olarak çalışıyorum.
                 </p>
                 <p className="text-gray-400 leading-relaxed">
-                  React, TypeScript, Next.js, Tailwind CSS ve modern web teknolojileri konusunda uzmanım. 
-                  Hızlı, güvenli ve kullanıcı dostu web siteleri oluşturarak müşteri memnuniyetini en üst seviyede tutuyorum.
+                  Vizyonum ve hevesimle büyüyen bilgim, dürüstlüğümle birleşince işler farklılaşıyor. 
+                  Hızlı teslim, özenli ilgi ve sürekli iletişim benim için standart — tek başıma çalıştığım için projeniz doğrudan bana emanet. Satırlarınız bol olsun.
                 </p>
               </div>
             </div>
