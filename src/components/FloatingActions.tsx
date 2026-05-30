@@ -26,9 +26,13 @@ const FloatingActions = () => {
   ];
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed z-50 flex flex-col items-end gap-3 bottom-[max(0.75rem,env(safe-area-inset-bottom))] right-[max(0.75rem,env(safe-area-inset-right))] sm:bottom-6 sm:right-6">
       {/* Action Buttons */}
-      <div className={`flex flex-col gap-3 mb-3 transition-all duration-300 ${isOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-0 pointer-events-none'}`}>
+      <div
+        className={`flex flex-col items-end gap-3 transition-all duration-300 origin-bottom-right ${
+          isOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-0 pointer-events-none'
+        }`}
+      >
         {actions.map((action, index) => (
           <a
             key={index}

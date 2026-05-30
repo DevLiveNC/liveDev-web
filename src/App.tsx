@@ -79,9 +79,9 @@ function App() {
         <Newsletter />
         <Contact />
         <Footer />
-        <FloatingActions />
-        <ScrollToTop />
       </div>
+      <FloatingActions />
+      <ScrollToTop />
     </div>
   );
 }

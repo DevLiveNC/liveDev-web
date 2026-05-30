@@ -47,7 +47,7 @@ const Hero = () => {
           </a>
           <a
             href="#portfolio"
-            className="inline-flex items-center gap-2 glass-panel px-8 py-4 rounded-full text-white font-medium hover:bg-white/10 transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 btn-secondary px-8 py-4"
           >
             Projelerime Göz Atın
           </a>

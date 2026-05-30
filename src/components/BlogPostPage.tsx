@@ -118,9 +118,9 @@ const BlogPostPage = ({ slug, isScrolled }: BlogPostPageProps) => {
         </article>
 
         <Footer />
-        <FloatingActions />
-        <ScrollToTop />
       </div>
+      <FloatingActions />
+      <ScrollToTop />
     </div>
   );
 };

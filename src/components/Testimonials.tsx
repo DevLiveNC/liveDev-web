@@ -76,7 +76,7 @@ const Testimonials = () => {
           <p className="text-muted mb-6">Siz de mutlu müşterilerimize katılın!</p>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-600 px-8 py-4 rounded-full text-white font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 btn-brand px-8 py-4"
           >
             Hemen Başlayın
           </a>

@@ -85,9 +85,9 @@ const Pricing = () => {
           {packages.map((pkg, index) => (
             <div
               key={index}
-              className={`relative glass-card backdrop-blur-sm rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 ${
+              className={`relative glass-card rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 ${
                 pkg.popular
-                  ? 'border-sky-400/40 shadow-xl shadow-sky-500/20 scale-105 md:scale-110'
+                  ? 'border-sky-400/40 shadow-xl shadow-sky-500/20 md:scale-105 lg:scale-110'
                   : 'hover:border-sky-400/25'
               }`}
             >
@@ -128,11 +128,9 @@ const Pricing = () => {
               {/* CTA Button */}
               <a
                 href="#contact"
-                className={`block text-center py-3 rounded-full font-medium transition-all ${
-                  pkg.popular
-                    ? 'btn-brand py-3 rounded-full'
-                    : 'btn-glass py-3 rounded-full'
-                }`}
+                className={`w-full ${
+                  pkg.popular ? 'btn-brand' : 'btn-secondary'
+                } py-3 px-6`}
               >
                 Başlayın
               </a>
@@ -149,7 +147,7 @@ const Pricing = () => {
             </p>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-600 px-8 py-4 rounded-full text-white font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all hover:scale-105"
+              className="inline-flex items-center gap-2 btn-brand px-8 py-4"
             >
               Özel Teklif Alın
             </a>
