@@ -49,9 +49,15 @@ const BlogPostPage = ({ slug, isScrolled }: BlogPostPageProps) => {
         <Navigation isScrolled={isScrolled} />
 
         {/* Hero */}
-        <header className={`relative pt-28 pb-16 bg-gradient-to-br ${post.gradient}`}>
-          <div className="absolute inset-0 bg-black/40" />
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <header className="relative pt-28 pb-16 min-h-[22rem] flex items-end overflow-hidden">
+          <img
+            src={post.coverImage}
+            alt={`${post.title} kapak görseli`}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className={`absolute inset-0 bg-gradient-to-br ${post.gradient} opacity-40 mix-blend-multiply`} />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-ink/30" />
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pb-4">
             <a
               href="#yazilarim"
               className="inline-flex items-center gap-2 text-white/80 hover:text-white text-sm mb-8 transition-colors"

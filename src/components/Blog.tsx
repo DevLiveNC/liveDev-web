@@ -99,8 +99,14 @@ const Blog = () => {
                   key={post.slug}
                   className="group glass-card-hover rounded-2xl overflow-hidden hover:-translate-y-2 snap-start shrink-0 w-[var(--card-w)]"
                 >
-                  <div className={`h-48 bg-gradient-to-br ${post.gradient} relative overflow-hidden`}>
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>
+                  <div className="h-48 relative overflow-hidden bg-ink-card">
+                    <img
+                      src={post.coverImage}
+                      alt={`${post.title} kapak görseli`}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent`} />
+                    <div className={`absolute inset-0 bg-gradient-to-br ${post.gradient} opacity-20 mix-blend-overlay`} />
                     <div className="absolute top-4 left-4">
                       <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs font-medium">
                         {post.category}

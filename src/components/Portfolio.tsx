@@ -3,13 +3,6 @@ import { ExternalLink, Code2 } from 'lucide-react';
 const Portfolio = () => {
   const projects = [
     {
-      title: 'E-Ticaret Platformu',
-      category: 'E-Commerce',
-      description: 'Modern ve kullanıcı dostu online alışveriş sitesi. Güvenli ödeme entegrasyonu ve admin paneli.',
-      tags: ['React', 'Next.js', 'Stripe', 'Tailwind'],
-      gradient: 'from-blue-500 to-cyan-500',
-    },
-    {
       title: 'EkrenFit — Spor Koçu Web Sitesi',
       category: 'Fitness',
       description: 'Profesyonel fitness koçu Ali Ekren için hazırladığım kişisel marka sitesi. Paketler, dönüşüm hikayeleri ve iletişim formuyla danışan kazanımına odaklanan modern bir yapı.',
@@ -17,34 +10,34 @@ const Portfolio = () => {
       preview: '/portfolio/fitekren-preview.jpg',
       url: 'https://fitekren.org',
     },
-    {
-      title: 'Restoran Web Sitesi',
-      category: 'Restaurant',
-      description: 'Online menü, rezervasyon sistemi ve sipariş takibi özellikli restoran sitesi.',
-      tags: ['Next.js', 'Firebase', 'Tailwind'],
-      gradient: 'from-orange-500 to-red-500',
-    },
-    {
-      title: 'Portfolyo Sitesi',
-      category: 'Portfolio',
-      description: 'Sanatçı ve tasarımcılar için modern portfolyo web sitesi. Galeri ve iletişim formu.',
-      tags: ['React', 'Framer Motion', 'Responsive'],
-      gradient: 'from-green-500 to-emerald-500',
-    },
-    {
-      title: 'Gayrimenkul Platformu',
-      category: 'Real Estate',
-      description: 'İlan yönetimi, filtreleme ve harita entegrasyonlu gayrimenkul sitesi.',
-      tags: ['Next.js', 'Maps API', 'Database'],
-      gradient: 'from-indigo-500 to-blue-500',
-    },
-    {
-      title: 'Blog Platformu',
-      category: 'Blog',
-      description: 'İçerik yönetimi, yorum sistemi ve sosyal medya entegrasyonlu blog sitesi.',
-      tags: ['React', 'Markdown', 'CMS', 'SEO'],
-      gradient: 'from-pink-500 to-rose-500',
-    },
+    // {
+    //   title: 'Restoran Web Sitesi',
+    //   category: 'Restaurant',
+    //   description: 'Online menü, rezervasyon sistemi ve sipariş takibi özellikli restoran sitesi.',
+    //   tags: ['Next.js', 'Firebase', 'Tailwind'],
+    //   gradient: 'from-orange-500 to-red-500',
+    // },
+    // {
+    //   title: 'Portfolyo Sitesi',
+    //   category: 'Portfolio',
+    //   description: 'Sanatçı ve tasarımcılar için modern portfolyo web sitesi. Galeri ve iletişim formu.',
+    //   tags: ['React', 'Framer Motion', 'Responsive'],
+    //   gradient: 'from-green-500 to-emerald-500',
+    // },
+    // {
+    //   title: 'Gayrimenkul Platformu',
+    //   category: 'Real Estate',
+    //   description: 'İlan yönetimi, filtreleme ve harita entegrasyonlu gayrimenkul sitesi.',
+    //   tags: ['Next.js', 'Maps API', 'Database'],
+    //   gradient: 'from-indigo-500 to-blue-500',
+    // },
+    // {
+    //   title: 'Blog Platformu',
+    //   category: 'Blog',
+    //   description: 'İçerik yönetimi, yorum sistemi ve sosyal medya entegrasyonlu blog sitesi.',
+    //   tags: ['React', 'Markdown', 'CMS', 'SEO'],
+    //   gradient: 'from-pink-500 to-rose-500',
+    // },
   ];
 
   return (
