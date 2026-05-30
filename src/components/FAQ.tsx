@@ -35,7 +35,7 @@ const FAQ = () => {
     },
     {
       question: 'Ödeme nasıl yapılır?',
-      answer: 'Projenin %50\'si başlangıçta, %50\'si teslim aşamasında ödenir. Havale/EFT veya kredi kartı ile ödeme kabul edilmektedir.',
+      answer: 'Projenin %50\'si başlangıçta, %50\'si teslim aşamasında ödenir. Havale/EFT ile ödeme kabul edilmektedir.',
     },
   ];
 
