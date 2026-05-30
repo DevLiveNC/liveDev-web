@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -125,20 +125,17 @@ const Contact = () => {
             {/* Social Links */}
             <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6">
               <h3 className="text-white font-semibold mb-4">Sosyal Medya</h3>
-              <a
-                href="https://www.instagram.com/yasar_kirmiziyuz/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 w-full px-4 py-3 bg-gray-700/50 rounded-lg hover:bg-gradient-to-br hover:from-pink-500 hover:to-purple-600 transition-all"
-              >
-                <div className="w-10 h-10 bg-gray-800/50 rounded-lg flex items-center justify-center">
-                  <Instagram className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <p className="text-white font-medium text-sm">Instagram</p>
-                  <p className="text-gray-400 text-xs">@yasar_kirmiziyuz</p>
-                </div>
-              </a>
+              <div className="flex gap-3">
+                {['LinkedIn', 'Twitter', 'Instagram', 'GitHub'].map((social) => (
+                  <a
+                    key={social}
+                    href="#"
+                    className="w-10 h-10 bg-gray-700/50 rounded-lg flex items-center justify-center hover:bg-gradient-to-br hover:from-blue-500 hover:to-cyan-600 transition-all"
+                  >
+                    <span className="text-xs text-white font-bold">{social[0]}</span>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 
