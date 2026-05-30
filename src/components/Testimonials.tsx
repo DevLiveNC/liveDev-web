@@ -14,7 +14,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-[#0a1020] via-[#0d1a35] to-[#0a1020] relative overflow-hidden">
+    <section className="py-20 section-surface relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
@@ -25,7 +25,7 @@ const Testimonials = () => {
         <ScrollReveal direction="up">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
+              <span className="gradient-heading">
                 Müşteri Yorumları
               </span>
             </h2>
@@ -62,7 +62,7 @@ const Testimonials = () => {
 
               {/* Author */}
               <div className="flex items-center gap-3 pt-6 divider-glass">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center text-2xl">
+                <div className="w-12 h-12 rounded-full gradient-brand flex items-center justify-center text-2xl">
                   {testimonial.image}
                 </div>
                 <div>

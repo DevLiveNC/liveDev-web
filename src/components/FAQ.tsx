@@ -52,7 +52,7 @@ const FAQ = () => {
         <ScrollReveal direction="up">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
+              <span className="gradient-heading">
                 Sıkça Sorulan Sorular
               </span>
             </h2>

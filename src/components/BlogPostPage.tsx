@@ -17,6 +17,7 @@ const BlogPostPage = ({ slug, isScrolled }: BlogPostPageProps) => {
     return (
       <div className="min-h-screen bg-ink text-slate-100 relative">
         <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+          <div className="retro-grid" />
           <div className="aurora-blob aurora-blob-1" />
           <div className="aurora-blob aurora-blob-2" />
           <div className="aurora-blob aurora-blob-3" />
@@ -40,6 +41,7 @@ const BlogPostPage = ({ slug, isScrolled }: BlogPostPageProps) => {
   return (
     <div className="min-h-screen bg-ink text-slate-100 relative">
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div className="retro-grid" />
         <div className="aurora-blob aurora-blob-1" />
         <div className="aurora-blob aurora-blob-2" />
         <div className="aurora-blob aurora-blob-3" />

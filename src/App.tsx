@@ -59,6 +59,7 @@ function App() {
     <div className="min-h-screen bg-ink text-slate-100 relative">
       {/* Site-wide ambient aurora */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div className="retro-grid" />
         <div className="aurora-blob aurora-blob-1" />
         <div className="aurora-blob aurora-blob-2" />
         <div className="aurora-blob aurora-blob-3" />

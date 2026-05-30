@@ -33,7 +33,7 @@ const About = () => {
         <ScrollReveal direction="up">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
+              <span className="gradient-heading">
                 Hakkımda
               </span>
             </h2>
@@ -47,7 +47,7 @@ const About = () => {
           <div className="glass-card rounded-2xl p-8 md:p-12">
             <div className="flex flex-col md:flex-row gap-8 items-center">
               <div className="flex-shrink-0">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-500 to-cyan-600 p-1">
+                <div className="w-32 h-32 rounded-full gradient-brand p-1">
                   <div className="w-full h-full rounded-full bg-ink-soft flex items-center justify-center">
                     <Code2 className="w-16 h-16 text-blue-400" />
                   </div>
