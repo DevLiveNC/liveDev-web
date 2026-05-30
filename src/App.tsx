@@ -14,10 +14,12 @@ import Stats from './components/Stats';
 import ScrollToTop from './components/ScrollToTop';
 import Newsletter from './components/Newsletter';
 import Blog from './components/Blog';
+import BlogPostPage from './components/BlogPostPage';
 import CTABanner from './components/CTABanner';
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [articleSlug, setArticleSlug] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,6 +29,31 @@ function App() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const parseHash = () => {
+      const hash = window.location.hash;
+      if (hash.startsWith('#yazi/')) {
+        setArticleSlug(hash.replace('#yazi/', ''));
+        window.scrollTo(0, 0);
+      } else {
+        setArticleSlug(null);
+        if (hash && hash !== '#') {
+          setTimeout(() => {
+            document.querySelector(hash)?.scrollIntoView({ behavior: 'smooth' });
+          }, 50);
+        }
+      }
+    };
+
+    parseHash();
+    window.addEventListener('hashchange', parseHash);
+    return () => window.removeEventListener('hashchange', parseHash);
+  }, []);
+
+  if (articleSlug) {
+    return <BlogPostPage slug={articleSlug} isScrolled={isScrolled} />;
+  }
 
   return (
     <div className="min-h-screen bg-ink text-slate-100 relative">

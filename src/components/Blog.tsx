@@ -1,35 +1,41 @@
-import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import { useRef, useState, useEffect } from 'react';
+import { Calendar, Clock, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { blogPosts } from '../data/blogPosts';
+
+const VISIBLE_COUNT = 3;
 
 const Blog = () => {
-  const posts = [
-    {
-      title: 'Script Dünyasından Web\'e: 8 Yıllık Yolculuğum',
-      excerpt:
-        'Oyun scriptlerinde başlayan kodlama serüvenim nasıl profesyonel web geliştirmeye dönüştü? Sekiz yıllık deneyimden öğrendiklerim ve freelance\'a geçiş hikayem.',
-      date: '12 Mayıs 2026',
-      readTime: '6 dk',
-      category: 'Deneyim',
-      gradient: 'from-blue-500 to-cyan-500',
-    },
-    {
-      title: 'Spor Koçu Sitesi Nasıl Tasarlanır? EkrenFit Projesi',
-      excerpt:
-        'Profesyonel fitness koçu Ali Ekren için hazırladığım EkrenFit sitesinde paketler, dönüşüm hikayeleri ve iletişim formunu nasıl kurguladım? Gerçek bir proje üzerinden anlatım.',
-      date: '28 Nisan 2026',
-      readTime: '5 dk',
-      category: 'Proje',
-      gradient: 'from-purple-500 to-pink-500',
-    },
-    {
-      title: 'Freelance Web Geliştirmede İletişim Neden Her Şeydir?',
-      excerpt:
-        'Tek başına çalışan bir geliştirici olarak hızlı teslim ve özenli ilginin sırrı: sürekli iletişim. Müşteri memnuniyetini artıran pratik ipuçları ve dürüst iş birliği yaklaşımım.',
-      date: '15 Nisan 2026',
-      readTime: '4 dk',
-      category: 'Freelance',
-      gradient: 'from-green-500 to-emerald-500',
-    },
-  ];
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(blogPosts.length > VISIBLE_COUNT);
+
+  const updateScrollButtons = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 8);
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 8);
+  };
+
+  useEffect(() => {
+    updateScrollButtons();
+    const el = scrollRef.current;
+    if (!el) return;
+    el.addEventListener('scroll', updateScrollButtons, { passive: true });
+    window.addEventListener('resize', updateScrollButtons);
+    return () => {
+      el.removeEventListener('scroll', updateScrollButtons);
+      window.removeEventListener('resize', updateScrollButtons);
+    };
+  }, []);
+
+  const scroll = (direction: 'left' | 'right') => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const card = el.querySelector('article');
+    const gap = 32;
+    const amount = card ? card.clientWidth + gap : el.clientWidth / VISIBLE_COUNT;
+    el.scrollBy({ left: direction === 'left' ? -amount : amount, behavior: 'smooth' });
+  };
 
   return (
     <section id="yazilarim" className="py-20 section-surface relative overflow-hidden">
@@ -39,69 +45,107 @@ const Blog = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
-              Yazılarım
-            </span>
+            <span className="gradient-heading">Yazılarım</span>
           </h2>
           <p className="text-muted text-lg max-w-2xl mx-auto">
             Web geliştirme, freelance çalışma ve projelerim hakkında notlar, deneyimler ve ipuçları
           </p>
         </div>
 
-        {/* Latest Posts */}
+        {/* Latest Posts — max 3 visible, horizontal scroll for more */}
         <div className="mb-10">
-          <h3 className="text-xl font-semibold text-white mb-8 flex items-center gap-3">
-            <span className="w-1 h-6 bg-gradient-to-b from-blue-400 to-cyan-500 rounded-full"></span>
-            Son Yazılarım
-          </h3>
+          <div className="flex items-center justify-between mb-8">
+            <h3 className="text-xl font-semibold text-white flex items-center gap-3">
+              <span className="w-1 h-6 bg-gradient-to-b from-sky-400 to-indigo-500 rounded-full"></span>
+              Son Yazılarım
+            </h3>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posts.map((post, index) => (
-              <article
-                key={index}
-                className="group glass-card-hover rounded-2xl overflow-hidden hover:-translate-y-2"
-              >
-                {/* Post Header */}
-                <div className={`h-48 bg-gradient-to-br ${post.gradient} relative overflow-hidden`}>
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs font-medium">
-                      {post.category}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Post Content */}
-                <div className="p-6">
-                  <h4 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors line-clamp-2">
-                    {post.title}
-                  </h4>
-                  <p className="text-muted text-sm mb-4 line-clamp-3">{post.excerpt}</p>
-
-                  {/* Post Meta */}
-                  <div className="flex items-center justify-between pt-4 divider-glass">
-                    <div className="flex items-center gap-4 text-faint text-xs">
-                      <div className="flex items-center gap-1">
-                        <Calendar className="w-4 h-4" />
-                        <span>{post.date}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Clock className="w-4 h-4" />
-                        <span>{post.readTime}</span>
-                      </div>
-                    </div>
-                    <button
-                      type="button"
-                      className="text-blue-400 hover:text-blue-300 transition-colors"
-                      aria-label={`${post.title} yazısını oku`}
-                    >
-                      <ArrowRight className="w-5 h-5" />
-                    </button>
-                  </div>
-                </div>
-              </article>
-            ))}
+            {blogPosts.length > VISIBLE_COUNT && (
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => scroll('left')}
+                  disabled={!canScrollLeft}
+                  aria-label="Önceki yazılar"
+                  className="w-10 h-10 icon-box-glass rounded-lg flex items-center justify-center text-white disabled:opacity-30 disabled:cursor-not-allowed hover:border-sky-400/30 transition-all"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => scroll('right')}
+                  disabled={!canScrollRight}
+                  aria-label="Sonraki yazılar"
+                  className="w-10 h-10 icon-box-glass rounded-lg flex items-center justify-center text-white disabled:opacity-30 disabled:cursor-not-allowed hover:border-sky-400/30 transition-all"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
+            )}
           </div>
+
+          <div
+            ref={scrollRef}
+            className="overflow-x-auto snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden [--card-w:100%] sm:[--card-w:calc((100%-2rem)/2)] lg:[--card-w:calc((100%-4rem)/3)]"
+          >
+            <div
+              className="flex gap-8"
+              style={{
+                width: `calc(${blogPosts.length} * var(--card-w) + ${(blogPosts.length - 1) * 2}rem)`,
+              }}
+            >
+              {blogPosts.map((post) => (
+                <article
+                  key={post.slug}
+                  className="group glass-card-hover rounded-2xl overflow-hidden hover:-translate-y-2 snap-start shrink-0 w-[var(--card-w)]"
+                >
+                  <div className={`h-48 bg-gradient-to-br ${post.gradient} relative overflow-hidden`}>
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>
+                    <div className="absolute top-4 left-4">
+                      <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs font-medium">
+                        {post.category}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="p-6">
+                    <a href={`#yazi/${post.slug}`} className="block">
+                      <h4 className="text-xl font-bold text-white mb-3 group-hover:text-sky-400 transition-colors line-clamp-2">
+                        {post.title}
+                      </h4>
+                      <p className="text-muted text-sm mb-4 line-clamp-3">{post.excerpt}</p>
+                    </a>
+
+                    <div className="flex items-center justify-between pt-4 divider-glass">
+                      <div className="flex items-center gap-4 text-faint text-xs">
+                        <div className="flex items-center gap-1">
+                          <Calendar className="w-4 h-4" />
+                          <span>{post.date}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Clock className="w-4 h-4" />
+                          <span>{post.readTime}</span>
+                        </div>
+                      </div>
+                      <a
+                        href={`#yazi/${post.slug}`}
+                        className="text-sky-400 hover:text-sky-300 transition-colors"
+                        aria-label={`${post.title} yazısını oku`}
+                      >
+                        <ArrowRight className="w-5 h-5" />
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          {blogPosts.length > VISIBLE_COUNT && (
+            <p className="text-faint text-sm text-center mt-4">
+              Daha fazla yazı için okları kullanın veya yana kaydırın
+            </p>
+          )}
         </div>
 
         {/* CTA */}
@@ -110,7 +154,7 @@ const Blog = () => {
             href="https://www.instagram.com/yasar_kirmiziyuz/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-600 px-8 py-4 rounded-full text-white font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 btn-brand px-8 py-4"
           >
             Daha Fazla İçerik İçin Takip Et
             <ArrowRight className="w-5 h-5" />
