@@ -61,7 +61,7 @@ const Pricing = () => {
   ];
 
   return (
-    <section id="pricing" className="py-20 section-surface relative overflow-hidden">
+    <section id="pricing" className="py-20 bg-gradient-to-b from-[#0a1020] via-[#0d1a35] to-[#0a1020] relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl"></div>
@@ -72,7 +72,7 @@ const Pricing = () => {
         <ScrollReveal direction="up">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              <span className="gradient-heading">
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
                 Paketlerim
               </span>
             </h2>
@@ -111,7 +111,7 @@ const Pricing = () => {
                 <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
                 <p className="text-muted text-sm mb-4">{pkg.description}</p>
                 <div className="mb-2">
-                  <span className="text-4xl md:text-5xl font-bold gradient-heading">
+                  <span className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
                     {pkg.price}
                   </span>
                 </div>

@@ -60,17 +60,17 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#08041a] border-t border-glass">
+    <footer className="bg-[#050810] border-t border-sky-500/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Main Footer Content */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="lg:col-span-1">
             <a href="#home" className="flex items-center space-x-2 mb-4" onClick={(e) => scrollToSection(e, '#home')}>
-              <div className="gradient-brand p-2 rounded-lg">
+              <div className="bg-gradient-to-br from-blue-500 to-cyan-600 p-2 rounded-lg">
                 <Code2 className="w-6 h-6 text-white" />
               </div>
-              <span className="text-xl font-bold gradient-heading">
+              <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
                 LiveDev
               </span>
             </a>

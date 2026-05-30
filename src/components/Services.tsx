@@ -42,7 +42,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 section-surface relative overflow-hidden">
+    <section id="services" className="py-20 bg-gradient-to-b from-[#0a1020] via-[#0d1a35] to-[#0a1020] relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
@@ -53,7 +53,7 @@ const Services = () => {
         <ScrollReveal direction="up">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              <span className="gradient-heading">
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
                 Hizmetlerim
               </span>
             </h2>
@@ -84,7 +84,7 @@ const Services = () => {
               <ul className="space-y-2">
                 {service.features.map((feature, fIndex) => (
                   <li key={fIndex} className="flex items-center text-subtle text-sm">
-                    <div className="w-1.5 h-1.5 gradient-brand rounded-full mr-3"></div>
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full mr-3"></div>
                     {feature}
                   </li>
                 ))}

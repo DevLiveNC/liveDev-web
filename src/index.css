@@ -1,42 +1,13 @@
 @import "tailwindcss";
 
-/* ============================================================
-   THEME — Vaporwave/Y2K neon + Aurora mesh + Clay + Glass + Material
-   ============================================================ */
 @theme {
-  /* Surfaces (deep purple-black) */
-  --color-ink: #0a0618;
-  --color-ink-soft: #120a2a;
-  --color-ink-card: #1a1140;
-
-  /* Neon palette */
-  --color-neon-pink: #ff4ecd;
-  --color-neon-purple: #b15cff;
-  --color-neon-cyan: #34e7e4;
-  --color-neon-blue: #5b8cff;
-  --color-retro-gold: #ffd76f;
-}
-
-:root {
-  /* Reusable clay/glow shadows */
-  --clay-card:
-    0 18px 40px -18px rgba(177, 92, 255, 0.40),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08),
-    inset 0 -10px 22px -12px rgba(0, 0, 0, 0.55);
-  --clay-card-hover:
-    0 26px 54px -16px rgba(255, 78, 205, 0.45),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12),
-    inset 0 -10px 22px -12px rgba(0, 0, 0, 0.5);
-  --clay-btn:
-    0 12px 26px -8px rgba(177, 92, 255, 0.6),
-    inset 0 1px 0 rgba(255, 255, 255, 0.38),
-    inset 0 -5px 12px -5px rgba(0, 0, 0, 0.3);
-  --clay-btn-hover:
-    0 18px 34px -8px rgba(255, 78, 205, 0.7),
-    inset 0 1px 0 rgba(255, 255, 255, 0.45),
-    inset 0 -5px 12px -5px rgba(0, 0, 0, 0.25);
-  --grad-neon: linear-gradient(120deg, #ff4ecd 0%, #b15cff 50%, #34e7e4 100%);
-  --grad-neon-soft: linear-gradient(120deg, rgba(255,78,205,0.18), rgba(177,92,255,0.14) 50%, rgba(52,231,228,0.18));
+  --color-ink: #070b14;
+  --color-ink-soft: #0a1020;
+  --color-ink-card: #0d1528;
+  --color-brand: #3b82f6;
+  --color-brand-light: #60a5fa;
+  --color-sky: #38bdf8;
+  --color-indigo-glow: #6366f1;
 }
 
 @layer base {
@@ -46,17 +17,7 @@
 
   body {
     @apply antialiased;
-    color: #ece7ff;
     background-color: var(--color-ink);
-    /* Aurora mesh base + subtle retro grid */
-    background-image:
-      radial-gradient(60rem 60rem at 12% -10%, rgba(255, 78, 205, 0.16), transparent 60%),
-      radial-gradient(55rem 55rem at 110% 20%, rgba(52, 231, 228, 0.14), transparent 60%),
-      radial-gradient(50rem 50rem at 50% 120%, rgba(177, 92, 255, 0.18), transparent 60%),
-      linear-gradient(rgba(177, 92, 255, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(177, 92, 255, 0.04) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 100% 100%, 44px 44px, 44px 44px;
-    background-attachment: fixed;
   }
 }
 
@@ -65,169 +26,83 @@
     animation-delay: 1s;
   }
 
-  /* ── Gradients ── */
   .gradient-heading {
-    @apply bg-clip-text text-transparent;
-    background-image: var(--grad-neon);
+    @apply bg-gradient-to-r from-sky-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent;
   }
 
   .gradient-brand {
-    background-image: var(--grad-neon);
+    @apply bg-gradient-to-r from-sky-500 via-blue-500 to-indigo-600;
   }
 
-  /* ── Text ── */
-  .text-muted {
-    color: rgba(199, 188, 240, 0.72);
-  }
-
-  .text-subtle {
-    color: rgba(214, 205, 248, 0.88);
-  }
-
-  .text-faint {
-    color: rgba(160, 148, 200, 0.65);
-  }
-
-  /* ── Borders / dividers ── */
-  .border-glass {
-    border-color: rgba(255, 78, 205, 0.18);
-  }
-
-  .divider-glass {
-    border-top: 1px solid rgba(177, 92, 255, 0.18);
-  }
-
-  /* ── Section surfaces ── */
-  .section-surface {
-    background-color: rgba(18, 10, 42, 0.72);
-  }
-
-  /* ── Glass + Clay cards ── */
-  .glass-card {
-    @apply border;
-    background-color: rgba(26, 17, 64, 0.92);
-    border-color: rgba(255, 78, 205, 0.16);
-    box-shadow: var(--clay-card);
-  }
-
-  .glass-card-hover {
-    @apply border transition-all duration-300;
-    background-color: rgba(26, 17, 64, 0.92);
-    border-color: rgba(255, 78, 205, 0.16);
-    box-shadow: var(--clay-card);
-  }
-
-  .glass-card-hover:hover {
-    border-color: rgba(52, 231, 228, 0.40);
-    box-shadow: var(--clay-card-hover);
-  }
-
-  /* ── Glass panels (badges, hero tiles, mobile) ── */
   .glass-panel {
-    @apply border;
-    background-color: rgba(26, 17, 64, 0.7);
-    border-color: rgba(255, 255, 255, 0.10);
+    @apply bg-[#0f1729] border border-sky-400/10 md:bg-white/[0.04] md:backdrop-blur-xl md:border-white/10;
   }
 
   .glass-nav {
-    background-color: rgba(10, 6, 24, 0.72);
-    border-bottom: 1px solid rgba(255, 78, 205, 0.18);
-    box-shadow: 0 8px 32px rgba(177, 92, 255, 0.18);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    @apply bg-[#070b14]/75 backdrop-blur-2xl border-b border-sky-500/10 shadow-[0_8px_32px_rgba(56,189,248,0.08)];
   }
 
-  /* ── Buttons (clay neon) ── */
   .btn-brand {
-    @apply inline-flex items-center justify-center font-semibold text-white rounded-full transition-all duration-300;
-    background-image: var(--grad-neon);
-    box-shadow: var(--clay-btn);
+    @apply inline-flex items-center justify-center bg-gradient-to-r from-sky-500 via-blue-500 to-indigo-600 text-white font-medium rounded-full border border-sky-400/30 shadow-md shadow-sky-500/20 transition-all duration-300 hover:shadow-lg hover:shadow-sky-500/30 hover:scale-105;
     -webkit-tap-highlight-color: transparent;
   }
 
-  .btn-brand:hover {
-    transform: translateY(-2px) scale(1.03);
-    box-shadow: var(--clay-btn-hover);
-  }
-
-  .btn-secondary,
-  .btn-glass {
-    @apply inline-flex items-center justify-center font-semibold text-white rounded-full transition-all duration-300 border;
-    background-color: rgba(177, 92, 255, 0.12);
-    border-color: rgba(52, 231, 228, 0.40);
+  .btn-secondary {
+    @apply inline-flex items-center justify-center bg-[#131c31] text-white font-medium rounded-full border border-sky-400/25 shadow-sm transition-all duration-300 hover:bg-[#1a2640] hover:border-sky-400/40 hover:scale-105;
     -webkit-tap-highlight-color: transparent;
   }
 
-  .btn-secondary:hover,
-  .btn-glass:hover {
-    background-color: rgba(177, 92, 255, 0.20);
-    border-color: rgba(52, 231, 228, 0.70);
-    transform: translateY(-2px);
+  .section-surface {
+    @apply bg-[#0a1020]/90;
   }
 
-  /* ── Inputs ── */
+  .glass-card {
+    @apply bg-[#0f1729] border border-sky-400/10 md:bg-gradient-to-br md:from-white/[0.07] md:to-white/[0.02] md:backdrop-blur-sm;
+  }
+
+  .glass-card-hover {
+    @apply bg-[#0f1729] border border-sky-400/10 transition-all duration-300 hover:border-sky-400/25 hover:shadow-xl hover:shadow-sky-500/10 md:bg-gradient-to-br md:from-white/[0.07] md:to-white/[0.02] md:backdrop-blur-sm;
+  }
+
+  .text-muted {
+    @apply text-slate-400/90;
+  }
+
+  .text-subtle {
+    @apply text-slate-300/90;
+  }
+
+  .text-faint {
+    @apply text-slate-500;
+  }
+
+  .border-glass {
+    @apply border-sky-400/10;
+  }
+
+  .divider-glass {
+    @apply border-t border-sky-400/10;
+  }
+
   .input-glass {
-    @apply transition-colors;
-    background-color: rgba(26, 17, 64, 0.85);
-    border: 1px solid rgba(255, 78, 205, 0.22);
-    color: #fff;
+    @apply bg-[#131c31] border border-sky-400/20 text-white placeholder-slate-500 focus:outline-none focus:border-sky-400/40 transition-colors md:bg-white/[0.04] md:backdrop-blur-sm md:border-sky-400/15;
   }
 
-  .input-glass::placeholder {
-    color: rgba(160, 148, 200, 0.6);
-  }
-
-  .input-glass:focus {
-    outline: none;
-    border-color: rgba(52, 231, 228, 0.6);
-  }
-
-  /* ── Tags / chips ── */
   .tag-glass {
-    background-color: rgba(177, 92, 255, 0.12);
-    border: 1px solid rgba(52, 231, 228, 0.25);
-    color: rgba(214, 205, 248, 0.92);
+    @apply bg-[#131c31] border border-sky-400/20 text-slate-300 md:bg-white/[0.06] md:backdrop-blur-sm md:border-sky-400/10;
   }
 
-  /* ── Icon boxes ── */
+  .btn-glass {
+    @apply inline-flex items-center justify-center bg-[#131c31] text-white font-medium rounded-full border border-sky-400/25 shadow-sm transition-all duration-300 hover:bg-[#1a2640] hover:border-sky-400/40 hover:scale-105;
+    -webkit-tap-highlight-color: transparent;
+  }
+
   .icon-box-glass {
-    background-color: rgba(177, 92, 255, 0.14);
-    border: 1px solid rgba(255, 78, 205, 0.20);
-  }
-
-  /* Desktop: layer real frosted glass on top */
-  @media (min-width: 768px) {
-    .glass-card,
-    .glass-card-hover {
-      background-color: rgba(26, 17, 64, 0.55);
-      background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.015));
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-    }
-
-    .glass-panel {
-      background-color: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-    }
-
-    .input-glass {
-      background-color: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-    }
-
-    .tag-glass,
-    .icon-box-glass {
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-    }
+    @apply bg-white/[0.06] backdrop-blur-sm border border-sky-400/10;
   }
 }
 
-/* ============================================================
-   Scroll reveal animations
-   ============================================================ */
+/* Scroll reveal animations */
 .scroll-reveal {
   opacity: 0;
   transition:
@@ -261,9 +136,7 @@
   }
 }
 
-/* ============================================================
-   Aurora ambient blobs (neon mesh)
-   ============================================================ */
+/* Aurora ambient blobs */
 @keyframes aurora-drift-1 {
   0%, 100% { transform: translate(0, 0) scale(1); }
   33% { transform: translate(60px, -40px) scale(1.08); }
@@ -282,20 +155,8 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.7; }
-}
-
-/* Retro vaporwave grid overlay */
-.retro-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(177, 92, 255, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(52, 231, 228, 0.06) 1px, transparent 1px);
-  background-size: 46px 46px;
-  -webkit-mask-image: radial-gradient(circle at 50% 35%, black, transparent 78%);
-  mask-image: radial-gradient(circle at 50% 35%, black, transparent 78%);
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.65; }
 }
 
 .aurora-blob {
@@ -311,7 +172,7 @@
   left: -5%;
   width: 520px;
   height: 520px;
-  background: radial-gradient(circle, rgba(255, 78, 205, 0.30) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.22) 0%, transparent 70%);
   animation: aurora-drift-1 18s ease-in-out infinite, pulse-glow 8s ease-in-out infinite;
 }
 
@@ -320,7 +181,7 @@
   right: -8%;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(52, 231, 228, 0.24) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, transparent 70%);
   animation: aurora-drift-2 22s ease-in-out infinite, pulse-glow 10s ease-in-out infinite 2s;
 }
 
@@ -329,26 +190,24 @@
   left: 30%;
   width: 480px;
   height: 480px;
-  background: radial-gradient(circle, rgba(177, 92, 255, 0.28) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
   animation: aurora-drift-3 20s ease-in-out infinite, pulse-glow 9s ease-in-out infinite 1s;
 }
 
-/* ============================================================
-   Custom scrollbar (neon)
-   ============================================================ */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0618;
+  background: #070b14;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #ff4ecd, #34e7e4);
+  background: linear-gradient(to bottom, #38bdf8, #6366f1);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #b15cff, #34e7e4);
+  background: linear-gradient(to bottom, #60a5fa, #818cf8);
 }

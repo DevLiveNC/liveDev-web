@@ -51,7 +51,7 @@ const FloatingActions = () => {
       {/* Main Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 gradient-brand rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all hover:scale-110 group"
+        className="w-14 h-14 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all hover:scale-110 group"
       >
         {isOpen ? (
           <X className="w-6 h-6 text-white" />
