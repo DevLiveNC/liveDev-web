@@ -13,6 +13,7 @@ const Footer = () => {
     company: [
       { name: 'Hakkımda', href: '#about' },
       { name: 'Projeler', href: '#portfolio' },
+      { name: 'Yazılarım', href: '#yazilarim' },
       { name: 'Paketler', href: '#pricing' },
       { name: 'İletişim', href: '#contact' },
     ],
@@ -43,7 +44,7 @@ const Footer = () => {
                 <Code2 className="w-6 h-6 text-white" />
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
-                WebDev Pro
+                LiveDev
               </span>
             </a>
             <p className="text-gray-400 text-sm mb-4">

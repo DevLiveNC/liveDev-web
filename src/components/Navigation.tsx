@@ -13,6 +13,7 @@ const Navigation = ({ isScrolled }: NavigationProps) => {
     { href: '#about', label: 'Hakkımda' },
     { href: '#services', label: 'Hizmetler' },
     { href: '#portfolio', label: 'Projeler' },
+    { href: '#yazilarim', label: 'Yazılarım' },
     { href: '#pricing', label: 'Paketler' },
     { href: '#contact', label: 'İletişim' },
   ];
@@ -40,7 +41,7 @@ const Navigation = ({ isScrolled }: NavigationProps) => {
               <Code2 className="w-6 h-6 text-white" />
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
-              WebDev Pro
+              LiveDev
             </span>
           </a>
 
