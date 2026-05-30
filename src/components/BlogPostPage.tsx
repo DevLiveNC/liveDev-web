@@ -66,7 +66,7 @@ const BlogPostPage = ({ slug, isScrolled }: BlogPostPageProps) => {
               Yazılarıma Dön
             </a>
 
-            <span className="inline-flex items-center gap-1.5 badge-glass mb-4">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs font-medium mb-4">
               <Tag className="w-3 h-3" />
               {post.category}
             </span>
@@ -90,7 +90,7 @@ const BlogPostPage = ({ slug, isScrolled }: BlogPostPageProps) => {
 
         {/* Content */}
         <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="glass-card p-8 md:p-12 space-y-8">
+          <div className="glass-card rounded-2xl p-8 md:p-12 space-y-8">
             {post.content.map((section, index) => (
               <section key={index}>
                 {section.heading && (

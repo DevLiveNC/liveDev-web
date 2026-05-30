@@ -14,17 +14,20 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-20 section-deep relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-b from-[#0a1020] via-[#0d1a35] to-[#0a1020] relative overflow-hidden">
+      {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 glow-orb-blue"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 glow-orb-indigo-soft"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal direction="up">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              <span className="gradient-heading">Müşteri Yorumları</span>
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
+                Müşteri Yorumları
+              </span>
             </h2>
             <p className="text-muted text-lg max-w-2xl mx-auto">
               Mutlu müşterilerimizin deneyimlerini keşfedin
@@ -39,7 +42,7 @@ const Testimonials = () => {
               direction={index % 2 === 0 ? 'left' : 'right'}
               delay={index * 100}
             >
-              <div className="group card-interactive p-8 hover:-translate-y-2 h-full">
+              <div className="group glass-card-hover rounded-2xl p-8 hover:-translate-y-2 h-full">
               {/* Quote Icon */}
               <div className="mb-4">
                 <Quote className="w-10 h-10 text-blue-500/30" />
@@ -59,7 +62,7 @@ const Testimonials = () => {
 
               {/* Author */}
               <div className="flex items-center gap-3 pt-6 divider-glass">
-                <div className="w-12 h-12 rounded-pill gradient-avatar-ring flex items-center justify-center text-2xl">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center text-2xl">
                   {testimonial.image}
                 </div>
                 <div>

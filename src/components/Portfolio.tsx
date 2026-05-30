@@ -43,13 +43,15 @@ const Portfolio = () => {
 
   return (
     <section id="portfolio" className="py-20 section-surface relative overflow-hidden">
-      <div className="absolute inset-0 section-overlay-blue"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/5 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal direction="up">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              <span className="gradient-heading">Projelerim</span>
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
+                Projelerim
+              </span>
             </h2>
             <p className="text-muted text-lg max-w-2xl mx-auto">
               Tamamladığım bazı projelere göz atın ve benzer bir proje için benimle iletişime geçin
@@ -64,7 +66,7 @@ const Portfolio = () => {
               direction={index % 2 === 0 ? 'left' : 'right'}
               delay={index * 100}
             >
-              <div className="group card-interactive overflow-hidden hover:-translate-y-2 h-full">
+              <div className="group glass-card-hover rounded-2xl overflow-hidden hover:-translate-y-2 h-full">
               {/* Project Preview */}
               <div
                 className={`h-48 relative overflow-hidden ${
@@ -88,23 +90,23 @@ const Portfolio = () => {
                         href={project.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="overlay-action p-3"
+                        className="bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/30 transition-all"
                         aria-label={`${project.title} sitesini aç`}
                       >
                         <ExternalLink className="w-5 h-5 text-white" />
                       </a>
                     ) : (
-                      <button className="overlay-action p-3">
+                      <button className="bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/30 transition-all">
                         <ExternalLink className="w-5 h-5 text-white" />
                       </button>
                     )}
-                    <button className="overlay-action p-3">
+                    <button className="bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/30 transition-all">
                       <Code2 className="w-5 h-5 text-white" />
                     </button>
                   </div>
                 </div>
                 <div className="absolute top-4 right-4">
-                  <span className="badge-glass">
+                  <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs font-medium">
                     {project.category}
                   </span>
                 </div>
@@ -112,7 +114,7 @@ const Portfolio = () => {
 
               {/* Project Info */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-2 card-title-hover">
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
                   {project.title}
                 </h3>
                 <p className="text-muted text-sm mb-4 leading-relaxed">
@@ -124,7 +126,7 @@ const Portfolio = () => {
                   {project.tags.map((tag, tIndex) => (
                     <span
                       key={tIndex}
-                      className="tag-glass px-3 py-1 text-xs"
+                      className="px-3 py-1 tag-glass rounded-full text-xs"
                     >
                       {tag}
                     </span>

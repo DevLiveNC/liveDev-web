@@ -42,17 +42,20 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 section-deep relative overflow-hidden">
+    <section id="services" className="py-20 bg-gradient-to-b from-[#0a1020] via-[#0d1a35] to-[#0a1020] relative overflow-hidden">
+      {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-0 w-96 h-96 glow-orb-blue"></div>
-        <div className="absolute bottom-1/4 right-0 w-96 h-96 glow-orb-indigo-soft"></div>
+        <div className="absolute top-1/4 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal direction="up">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              <span className="gradient-heading">Hizmetlerim</span>
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
+                Hizmetlerim
+              </span>
             </h2>
             <p className="text-muted text-lg max-w-2xl mx-auto">
               İşletmenizin ihtiyaçlarına özel, kapsamlı web çözümleri sunuyorum
@@ -67,9 +70,13 @@ const Services = () => {
               direction={index % 2 === 0 ? 'left' : 'right'}
               delay={index * 80}
             >
-              <div className="group card-interactive p-8 hover:-translate-y-2 h-full">
-              <div className="icon-box-brand-lg w-16 h-16 mb-6 group-hover:scale-110 transition-transform">
-                <service.icon className="w-8 h-8 text-brand-icon" />
+              <div className="group glass-card-hover rounded-2xl p-8 hover:-translate-y-2 h-full">
+              {/* Icon */}
+              <div className="bg-gradient-to-br from-sky-500/20 to-indigo-600/20 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <service.icon className="w-8 h-8 text-blue-400" />
+              </div>
+
+              {/* Content */}
               <h3 className="text-2xl font-bold text-white mb-3">{service.title}</h3>
               <p className="text-muted mb-6 leading-relaxed">{service.description}</p>
 
@@ -77,7 +84,7 @@ const Services = () => {
               <ul className="space-y-2">
                 {service.features.map((feature, fIndex) => (
                   <li key={fIndex} className="flex items-center text-subtle text-sm">
-                    <div className="dot-brand mr-3"></div>
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full mr-3"></div>
                     {feature}
                   </li>
                 ))}

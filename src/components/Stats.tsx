@@ -90,10 +90,11 @@ const Stats = () => {
   };
 
   return (
-    <section ref={sectionRef} className="py-20 section-deep relative overflow-hidden">
+    <section ref={sectionRef} className="py-20 bg-gradient-to-b from-[#0d1a35] to-[#0a1020] relative overflow-hidden">
+      {/* Background */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 glow-orb-blue"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 glow-orb-indigo"></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -104,8 +105,8 @@ const Stats = () => {
               direction={index % 2 === 0 ? 'left' : 'right'}
               delay={index * 100}
             >
-              <div className="group card-interactive p-8 hover:-translate-y-2 text-center h-full">
-              <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${stat.gradient} rounded-card mb-4 group-hover:scale-110 transition-transform`}>
+              <div className="group glass-card-hover rounded-2xl p-8 hover:-translate-y-2 text-center h-full">
+              <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${stat.gradient} rounded-xl mb-4 group-hover:scale-110 transition-transform`}>
                 <stat.icon className="w-8 h-8 text-white" />
               </div>
               <div className={`text-4xl md:text-5xl font-bold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent mb-2`}>

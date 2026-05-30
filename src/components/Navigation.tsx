@@ -37,7 +37,7 @@ const Navigation = ({ isScrolled }: NavigationProps) => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="#home" className="flex items-center space-x-2 group" onClick={(e) => scrollToSection(e, '#home')}>
-            <div className="logo-box group-hover:scale-110">
+            <div className="gradient-brand p-2 rounded-lg group-hover:scale-110 transition-transform shadow-lg shadow-sky-500/20">
               <Code2 className="w-6 h-6 text-white" />
             </div>
             <span className="text-xl font-bold gradient-heading">
@@ -70,7 +70,7 @@ const Navigation = ({ isScrolled }: NavigationProps) => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 nav-item-hover"
+            className="md:hidden p-2 rounded-lg hover:bg-white/[0.06] backdrop-blur-sm transition-colors"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -79,14 +79,14 @@ const Navigation = ({ isScrolled }: NavigationProps) => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden glass-nav border-t border-brand-subtle">
+        <div className="md:hidden glass-nav border-t border-sky-500/10">
           <div className="px-4 py-4 space-y-3">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className="block px-4 py-2 text-subtle hover:text-white nav-item-hover"
+                className="block px-4 py-2 text-subtle hover:text-white hover:bg-white/[0.06] backdrop-blur-sm rounded-lg transition-colors"
               >
                 {link.label}
               </a>

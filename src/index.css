@@ -1,30 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  /* Surfaces */
   --color-ink: #070b14;
   --color-ink-soft: #0a1020;
   --color-ink-card: #0d1528;
-  --color-surface-mid: #0d1a35;
-  --color-surface-input: #131c31;
-  --color-surface-input-hover: #1a2640;
-  --color-surface-card: #0f1729;
-  --color-surface-deep: #050810;
-  --color-surface-hero: #0c1a3a;
-
-  /* Brand palette */
   --color-brand: #3b82f6;
   --color-brand-light: #60a5fa;
   --color-sky: #38bdf8;
   --color-indigo-glow: #6366f1;
-  --color-accent: #22d3ee;
-
-  /* Radius scale */
-  --radius-icon: 0.5rem;
-  --radius-card: 0.75rem;
-  --radius-card-lg: 1rem;
-  --radius-panel: 1.5rem;
-  --radius-pill: 9999px;
 }
 
 @layer base {
@@ -43,66 +26,42 @@
     animation-delay: 1s;
   }
 
-  /* ── Typography & gradients ── */
   .gradient-heading {
     @apply bg-gradient-to-r from-sky-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent;
-  }
-
-  .gradient-price {
-    @apply bg-gradient-to-r from-sky-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent;
   }
 
   .gradient-brand {
     @apply bg-gradient-to-r from-sky-500 via-blue-500 to-indigo-600;
   }
 
-  .gradient-brand-vertical {
-    @apply bg-gradient-to-b from-sky-400 to-indigo-500;
+  .glass-panel {
+    @apply bg-[#0f1729] border border-sky-400/10 md:bg-white/[0.04] md:backdrop-blur-xl md:border-white/10;
   }
 
-  .gradient-avatar-ring {
-    @apply bg-gradient-to-br from-blue-500 to-cyan-600;
+  .glass-nav {
+    @apply bg-[#070b14]/75 backdrop-blur-2xl border-b border-sky-500/10 shadow-[0_8px_32px_rgba(56,189,248,0.08)];
   }
 
-  .gradient-icon-soft {
-    @apply bg-gradient-to-br from-blue-500/10 to-indigo-600/10;
+  .btn-brand {
+    @apply inline-flex items-center justify-center bg-gradient-to-r from-sky-500 via-blue-500 to-indigo-600 text-white font-medium rounded-full border border-sky-400/30 shadow-md shadow-sky-500/20 transition-all duration-300 hover:shadow-lg hover:shadow-sky-500/30 hover:scale-105;
+    -webkit-tap-highlight-color: transparent;
   }
 
-  .gradient-icon-brand {
-    @apply bg-gradient-to-br from-sky-500/20 to-indigo-600/20;
+  .btn-secondary {
+    @apply inline-flex items-center justify-center bg-[#131c31] text-white font-medium rounded-full border border-sky-400/25 shadow-sm transition-all duration-300 hover:bg-[#1a2640] hover:border-sky-400/40 hover:scale-105;
+    -webkit-tap-highlight-color: transparent;
   }
 
-  .gradient-icon-brand-strong {
-    @apply bg-gradient-to-br from-blue-500/20 to-cyan-600/20;
+  .section-surface {
+    @apply bg-[#0a1020]/90;
   }
 
-  .gradient-pack-neutral {
-    @apply bg-gradient-to-br from-slate-600 to-slate-700;
+  .glass-card {
+    @apply bg-[#0f1729] border border-sky-400/10 md:bg-gradient-to-br md:from-white/[0.07] md:to-white/[0.02] md:backdrop-blur-sm;
   }
 
-  .gradient-pack-brand {
-    @apply bg-gradient-to-br from-blue-600 to-cyan-600;
-  }
-
-  .gradient-pack-premium {
-    @apply bg-gradient-to-br from-sky-600 to-indigo-600;
-  }
-
-  /* ── Text colors ── */
-  .text-brand {
-    @apply text-sky-400;
-  }
-
-  .text-brand-icon {
-    @apply text-blue-400;
-  }
-
-  .text-accent {
-    @apply text-cyan-400;
-  }
-
-  .text-link {
-    @apply text-muted hover:text-sky-300 transition-colors;
+  .glass-card-hover {
+    @apply bg-[#0f1729] border border-sky-400/10 transition-all duration-300 hover:border-sky-400/25 hover:shadow-xl hover:shadow-sky-500/10 md:bg-gradient-to-br md:from-white/[0.07] md:to-white/[0.02] md:backdrop-blur-sm;
   }
 
   .text-muted {
@@ -117,224 +76,29 @@
     @apply text-slate-500;
   }
 
-  /* ── Borders & dividers ── */
   .border-glass {
     @apply border-sky-400/10;
-  }
-
-  .border-brand-subtle {
-    @apply border-sky-500/10;
-  }
-
-  .border-brand {
-    @apply border-sky-400/25;
-  }
-
-  .border-brand-strong {
-    @apply border-sky-400/40;
   }
 
   .divider-glass {
     @apply border-t border-sky-400/10;
   }
 
-  /* ── Shadows ── */
-  .shadow-brand {
-    @apply shadow-lg shadow-sky-500/20;
-  }
-
-  .shadow-brand-sm {
-    @apply shadow-md shadow-sky-500/20;
-  }
-
-  /* ── Section backgrounds ── */
-  .section-surface {
-    @apply bg-ink-soft/90;
-  }
-
-  .section-deep {
-    @apply bg-gradient-to-b from-ink-soft via-surface-mid to-ink-soft;
-  }
-
-  .section-overlay-indigo {
-    @apply bg-gradient-to-b from-transparent via-indigo-900/5 to-transparent;
-  }
-
-  .section-overlay-blue {
-    @apply bg-gradient-to-b from-transparent via-blue-900/5 to-transparent;
-  }
-
-  .section-cta-glow {
-    @apply bg-gradient-to-br from-sky-600/15 via-indigo-600/10 to-blue-600/15;
-  }
-
-  .footer-surface {
-    @apply bg-surface-deep border-t border-brand-subtle;
-  }
-
-  /* ── Glow orbs (decorative) ── */
-  .glow-orb {
-    @apply rounded-pill blur-3xl;
-  }
-
-  .glow-orb-sky {
-    @apply glow-orb bg-sky-500/10;
-  }
-
-  .glow-orb-sky-strong {
-    @apply glow-orb bg-sky-500/15;
-  }
-
-  .glow-orb-indigo {
-    @apply glow-orb bg-indigo-500/10;
-  }
-
-  .glow-orb-indigo-soft {
-    @apply glow-orb bg-indigo-500/5;
-  }
-
-  .glow-orb-blue {
-    @apply glow-orb bg-blue-500/5;
-  }
-
-  .glow-orb-blue-soft {
-    @apply glow-orb bg-blue-500/8;
-  }
-
-  /* ── Glass surfaces ── */
-  .glass-panel {
-    @apply bg-surface-card border border-glass md:bg-white/[0.04] md:backdrop-blur-xl md:border-white/10;
-  }
-
-  .glass-nav {
-    @apply bg-ink/75 backdrop-blur-2xl border-b border-brand-subtle shadow-[0_8px_32px_rgba(56,189,248,0.08)];
-  }
-
-  .glass-card {
-    @apply bg-surface-card border border-glass rounded-card-lg md:bg-gradient-to-br md:from-white/[0.07] md:to-white/[0.02] md:backdrop-blur-sm;
-  }
-
-  .glass-card-hover {
-    @apply bg-surface-card border border-glass rounded-card-lg transition-all duration-300 hover:border-brand hover:shadow-xl hover:shadow-sky-500/10 md:bg-gradient-to-br md:from-white/[0.07] md:to-white/[0.02] md:backdrop-blur-sm;
-  }
-
-  /* Composite card variants */
-  .card-sm {
-    @apply glass-card-hover rounded-card;
-  }
-
-  .card-panel {
-    @apply glass-card rounded-panel;
-  }
-
-  .card-interactive {
-    @apply glass-card-hover;
-  }
-
-  /* ── Buttons ── */
-  .btn-brand {
-    @apply inline-flex items-center justify-center gradient-brand text-white font-medium rounded-pill border border-sky-400/30 shadow-brand-sm transition-all duration-300 hover:shadow-brand hover:scale-105;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  .btn-secondary {
-    @apply inline-flex items-center justify-center bg-surface-input text-white font-medium rounded-pill border border-brand shadow-sm transition-all duration-300 hover:bg-surface-input-hover hover:border-brand-strong hover:scale-105;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  .btn-glass {
-    @apply inline-flex items-center justify-center bg-surface-input text-white font-medium rounded-pill border border-brand shadow-sm transition-all duration-300 hover:bg-surface-input-hover hover:border-brand-strong hover:scale-105;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  .btn-newsletter {
-    @apply inline-flex items-center gap-3 px-8 py-4 bg-ink/80 backdrop-blur-sm text-white rounded-pill font-medium hover:bg-ink transition-all hover:scale-105 border border-white/10;
-  }
-
-  /* ── Form & tags ── */
   .input-glass {
-    @apply bg-surface-input border border-sky-400/20 text-white placeholder-slate-500 rounded-icon focus:outline-none focus:border-brand-strong transition-colors md:bg-white/[0.04] md:backdrop-blur-sm md:border-sky-400/15;
-  }
-
-  .field {
-    @apply input-glass w-full px-4 py-3;
+    @apply bg-[#131c31] border border-sky-400/20 text-white placeholder-slate-500 focus:outline-none focus:border-sky-400/40 transition-colors md:bg-white/[0.04] md:backdrop-blur-sm md:border-sky-400/15;
   }
 
   .tag-glass {
-    @apply bg-surface-input border border-sky-400/20 text-slate-300 rounded-pill md:bg-white/[0.06] md:backdrop-blur-sm md:border-glass;
+    @apply bg-[#131c31] border border-sky-400/20 text-slate-300 md:bg-white/[0.06] md:backdrop-blur-sm md:border-sky-400/10;
   }
 
-  .tag-pill {
-    @apply tag-glass px-6 py-3 hover:border-brand-strong transition-all hover:scale-105;
+  .btn-glass {
+    @apply inline-flex items-center justify-center bg-[#131c31] text-white font-medium rounded-full border border-sky-400/25 shadow-sm transition-all duration-300 hover:bg-[#1a2640] hover:border-sky-400/40 hover:scale-105;
+    -webkit-tap-highlight-color: transparent;
   }
 
-  /* ── Icon boxes & badges ── */
   .icon-box-glass {
-    @apply bg-white/[0.06] backdrop-blur-sm border border-glass rounded-icon;
-  }
-
-  .icon-box {
-    @apply icon-box-glass flex items-center justify-center;
-  }
-
-  .icon-box-brand {
-    @apply gradient-icon-brand rounded-icon flex items-center justify-center;
-  }
-
-  .icon-box-brand-lg {
-    @apply gradient-icon-brand rounded-card flex items-center justify-center;
-  }
-
-  .icon-box-brand-strong {
-    @apply gradient-icon-brand-strong rounded-icon flex items-center justify-center;
-  }
-
-  .logo-box {
-    @apply gradient-brand p-2 rounded-icon shadow-brand-sm transition-transform flex items-center justify-center;
-  }
-
-  .logo-box-lg {
-    @apply gradient-avatar-ring p-2 rounded-icon flex items-center justify-center;
-  }
-
-  .badge-glass {
-    @apply px-3 py-1 bg-white/20 backdrop-blur-sm rounded-pill text-white text-xs font-medium;
-  }
-
-  .badge-popular {
-    @apply gradient-brand px-4 py-1 rounded-pill flex items-center gap-1;
-  }
-
-  .dot-brand {
-    @apply w-1.5 h-1.5 gradient-brand rounded-pill;
-  }
-
-  .section-accent-bar {
-    @apply w-1 h-5 md:h-6 gradient-brand-vertical rounded-pill;
-  }
-
-  .nav-item-hover {
-    @apply hover:bg-white/[0.06] backdrop-blur-sm rounded-icon transition-colors;
-  }
-
-  .overlay-action {
-    @apply bg-white/20 backdrop-blur-sm rounded-pill hover:bg-white/30 transition-all;
-  }
-
-  .card-title-hover {
-    @apply group-hover:text-brand transition-colors;
-  }
-
-  .card-popular {
-    @apply border-brand-strong shadow-brand md:scale-105 lg:scale-110;
-  }
-
-  .fab-brand {
-    @apply w-14 h-14 gradient-brand rounded-pill flex items-center justify-center shadow-brand transition-all hover:scale-110;
-  }
-
-  .scroll-top-btn {
-    @apply fixed bottom-6 left-6 z-50 w-12 h-12 gradient-brand rounded-pill flex items-center justify-center shadow-brand transition-all hover:scale-110;
+    @apply bg-white/[0.06] backdrop-blur-sm border border-sky-400/10;
   }
 }
 
