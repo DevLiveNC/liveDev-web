@@ -17,7 +17,7 @@ const Pricing = () => {
         'Sosyal medya entegrasyonu',
       ],
       popular: false,
-      gradient: 'from-gray-700 to-gray-800',
+      gradient: 'from-slate-600 to-slate-700',
     },
     {
       name: 'Profesyonel Paket',
@@ -56,7 +56,7 @@ const Pricing = () => {
         '7/24 teknik destek',
       ],
       popular: false,
-      gradient: 'from-purple-600 to-pink-600',
+      gradient: 'from-sky-600 to-indigo-600',
     },
   ];
 
@@ -64,7 +64,7 @@ const Pricing = () => {
     <section id="pricing" className="py-20 bg-gradient-to-b from-[#0a1020] via-[#0d1a35] to-[#0a1020] relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
       </div>
 
@@ -76,7 +76,7 @@ const Pricing = () => {
               Paketlerim
             </span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-muted text-lg max-w-2xl mx-auto">
             İhtiyacınıza uygun paketi seçin veya özel bir teklif için benimle iletişime geçin
           </p>
         </div>
@@ -86,16 +86,16 @@ const Pricing = () => {
           {packages.map((pkg, index) => (
             <div
               key={index}
-              className={`relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 ${
+              className={`relative glass-card backdrop-blur-sm rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 ${
                 pkg.popular
-                  ? 'border-purple-500 shadow-xl shadow-purple-500/20 scale-105 md:scale-110'
-                  : 'border-gray-700/50 hover:border-purple-500/50'
+                  ? 'border-sky-400/40 shadow-xl shadow-sky-500/20 scale-105 md:scale-110'
+                  : 'hover:border-sky-400/25'
               }`}
             >
               {/* Popular Badge */}
               {pkg.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-gradient-to-r from-blue-500 to-purple-600 px-4 py-1 rounded-full flex items-center gap-1">
+                  <div className="bg-gradient-to-r from-sky-500 to-indigo-600 px-4 py-1 rounded-full flex items-center gap-1">
                     <Star className="w-4 h-4 text-white fill-white" />
                     <span className="text-white text-sm font-medium">En Popüler</span>
                   </div>
@@ -105,13 +105,13 @@ const Pricing = () => {
               {/* Package Header */}
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
-                <p className="text-gray-400 text-sm mb-4">{pkg.description}</p>
+                <p className="text-muted text-sm mb-4">{pkg.description}</p>
                 <div className="mb-2">
                   <span className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
                     {pkg.price}
                   </span>
                 </div>
-                <span className="text-gray-400 text-sm">{pkg.period}</span>
+                <span className="text-muted text-sm">{pkg.period}</span>
               </div>
 
               {/* Features List */}
@@ -121,7 +121,7 @@ const Pricing = () => {
                     <div className={`flex-shrink-0 mt-0.5 bg-gradient-to-br ${pkg.gradient} w-5 h-5 rounded-full flex items-center justify-center`}>
                       <Check className="w-3 h-3 text-white" />
                     </div>
-                    <span className="text-gray-300 text-sm">{feature}</span>
+                    <span className="text-subtle text-sm">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -131,8 +131,8 @@ const Pricing = () => {
                 href="#contact"
                 className={`block text-center py-3 rounded-full font-medium transition-all ${
                   pkg.popular
-                    ? 'bg-gradient-to-r from-blue-500 to-cyan-600 text-white hover:shadow-lg hover:shadow-blue-500/50'
-                    : 'bg-gray-700/50 text-white hover:bg-gray-700'
+                    ? 'btn-brand py-3 rounded-full'
+                    : 'btn-glass py-3 rounded-full'
                 }`}
               >
                 Başlayın
@@ -143,9 +143,9 @@ const Pricing = () => {
 
         {/* Custom Package CTA */}
         <div className="mt-16 text-center">
-          <div className="max-w-2xl mx-auto bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8">
+          <div className="max-w-2xl mx-auto glass-card rounded-2xl p-8">
             <h3 className="text-2xl font-bold text-white mb-3">Özel Paket İhtiyacınız mı Var?</h3>
-            <p className="text-gray-400 mb-6">
+            <p className="text-muted mb-6">
               Yukarıdaki paketler size uygun değilse, özel ihtiyaçlarınız için birlikte özel bir paket oluşturabiliriz.
             </p>
             <a

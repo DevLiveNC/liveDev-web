@@ -74,7 +74,7 @@ const Footer = () => {
                 LiveDev
               </span>
             </a>
-            <p className="text-gray-400 text-sm mb-4">
+            <p className="text-muted text-sm mb-4">
               Profesyonel web çözümleri ile işletmenizi dijital dünyada zirveye taşıyoruz.
             </p>
             <div className="flex gap-3">
@@ -85,7 +85,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.name}
-                  className={`w-10 h-10 bg-gray-800/50 rounded-lg flex items-center justify-center transition-all ${social.hoverClass}`}
+                  className={`w-10 h-10 icon-box-glass rounded-lg flex items-center justify-center transition-all ${social.hoverClass}`}
                 >
                   <social.icon className="w-5 h-5 text-white" />
                 </a>
@@ -102,7 +102,7 @@ const Footer = () => {
                   <a
                     href={link.href}
                     onClick={(e) => scrollToSection(e, link.href)}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-muted hover:text-sky-300 transition-colors text-sm"
                   >
                     {link.name}
                   </a>
@@ -120,7 +120,7 @@ const Footer = () => {
                   <a
                     href={link.href}
                     onClick={(e) => scrollToSection(e, link.href)}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-muted hover:text-sky-300 transition-colors text-sm"
                   >
                     {link.name}
                   </a>
@@ -137,7 +137,7 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-muted hover:text-sky-300 transition-colors text-sm"
                   >
                     {link.name}
                   </a>
@@ -148,12 +148,12 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-gray-800">
+        <div className="pt-8 divider-glass">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm text-center md:text-left">
+            <p className="text-muted text-sm text-center md:text-left">
               © {currentYear} Yaşar Kırmızıyüz - liveDev. Tüm hakları saklıdır.
             </p>
-            <p className="text-gray-400 text-sm flex items-center gap-1">
+            <p className="text-muted text-sm flex items-center gap-1">
               Yaşar Kırmızıyüz - liveDev
             </p>
           </div>

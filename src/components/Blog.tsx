@@ -43,7 +43,7 @@ const Blog = () => {
               Yazılarım
             </span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-muted text-lg max-w-2xl mx-auto">
             Web geliştirme, freelance çalışma ve projelerim hakkında notlar, deneyimler ve ipuçları
           </p>
         </div>
@@ -59,7 +59,7 @@ const Blog = () => {
             {posts.map((post, index) => (
               <article
                 key={index}
-                className="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-2"
+                className="group glass-card-hover rounded-2xl overflow-hidden hover:-translate-y-2"
               >
                 {/* Post Header */}
                 <div className={`h-48 bg-gradient-to-br ${post.gradient} relative overflow-hidden`}>
@@ -76,11 +76,11 @@ const Blog = () => {
                   <h4 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors line-clamp-2">
                     {post.title}
                   </h4>
-                  <p className="text-gray-400 text-sm mb-4 line-clamp-3">{post.excerpt}</p>
+                  <p className="text-muted text-sm mb-4 line-clamp-3">{post.excerpt}</p>
 
                   {/* Post Meta */}
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-700/50">
-                    <div className="flex items-center gap-4 text-gray-500 text-xs">
+                  <div className="flex items-center justify-between pt-4 divider-glass">
+                    <div className="flex items-center gap-4 text-faint text-xs">
                       <div className="flex items-center gap-1">
                         <Calendar className="w-4 h-4" />
                         <span>{post.date}</span>

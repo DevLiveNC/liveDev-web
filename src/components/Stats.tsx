@@ -93,7 +93,7 @@ const Stats = () => {
       {/* Background */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -101,7 +101,7 @@ const Stats = () => {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-2 text-center"
+              className="group glass-card-hover rounded-2xl p-8 hover:-translate-y-2 text-center"
             >
               <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${stat.gradient} rounded-xl mb-4 group-hover:scale-110 transition-transform`}>
                 <stat.icon className="w-8 h-8 text-white" />
@@ -109,7 +109,7 @@ const Stats = () => {
               <div className={`text-4xl md:text-5xl font-bold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent mb-2`}>
                 {isVisible ? <Counter end={stat.number} suffix={stat.suffix} /> : '0' + stat.suffix}
               </div>
-              <div className="text-gray-400 font-medium">{stat.label}</div>
+              <div className="text-muted font-medium">{stat.label}</div>
             </div>
           ))}
         </div>

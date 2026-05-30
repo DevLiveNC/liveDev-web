@@ -59,7 +59,7 @@ const Portfolio = () => {
               Projelerim
             </span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-muted text-lg max-w-2xl mx-auto">
             Tamamladığım bazı projelere göz atın ve benzer bir proje için benimle iletişime geçin
           </p>
         </div>
@@ -69,13 +69,13 @@ const Portfolio = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-2"
+              className="group glass-card-hover rounded-2xl overflow-hidden hover:-translate-y-2"
             >
               {/* Project Preview */}
               <div
                 className={`h-48 relative overflow-hidden ${
                   'preview' in project && project.preview
-                    ? 'bg-gray-800'
+                    ? 'bg-ink-card'
                     : `bg-gradient-to-br ${project.gradient}`
                 }`}
               >
@@ -121,7 +121,7 @@ const Portfolio = () => {
                 <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+                <p className="text-muted text-sm mb-4 leading-relaxed">
                   {project.description}
                 </p>
 
@@ -130,7 +130,7 @@ const Portfolio = () => {
                   {project.tags.map((tag, tIndex) => (
                     <span
                       key={tIndex}
-                      className="px-3 py-1 bg-gray-700/50 rounded-full text-gray-300 text-xs"
+                      className="px-3 py-1 tag-glass rounded-full text-xs"
                     >
                       {tag}
                     </span>
@@ -143,7 +143,7 @@ const Portfolio = () => {
 
         {/* CTA */}
         <div className="mt-16 text-center">
-          <p className="text-gray-400 mb-6">Benzer bir projeniz mi var?</p>
+          <p className="text-muted mb-6">Benzer bir projeniz mi var?</p>
           <a
             href="#contact"
             className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-600 px-8 py-4 rounded-full text-white font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all hover:scale-105"

@@ -45,7 +45,7 @@ const Services = () => {
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -56,7 +56,7 @@ const Services = () => {
               Hizmetlerim
             </span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-muted text-lg max-w-2xl mx-auto">
             İşletmenizin ihtiyaçlarına özel, kapsamlı web çözümleri sunuyorum
           </p>
         </div>
@@ -66,21 +66,21 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-2"
+              className="group glass-card-hover rounded-2xl p-8 hover:-translate-y-2"
             >
               {/* Icon */}
-              <div className="bg-gradient-to-br from-blue-500/20 to-purple-600/20 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="bg-gradient-to-br from-sky-500/20 to-indigo-600/20 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <service.icon className="w-8 h-8 text-blue-400" />
               </div>
 
               {/* Content */}
               <h3 className="text-2xl font-bold text-white mb-3">{service.title}</h3>
-              <p className="text-gray-400 mb-6 leading-relaxed">{service.description}</p>
+              <p className="text-muted mb-6 leading-relaxed">{service.description}</p>
 
               {/* Features */}
               <ul className="space-y-2">
                 {service.features.map((feature, fIndex) => (
-                  <li key={fIndex} className="flex items-center text-gray-300 text-sm">
+                  <li key={fIndex} className="flex items-center text-subtle text-sm">
                     <div className="w-1.5 h-1.5 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full mr-3"></div>
                     {feature}
                   </li>

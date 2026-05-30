@@ -51,7 +51,7 @@ const Testimonials = () => {
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -62,7 +62,7 @@ const Testimonials = () => {
               Müşteri Yorumları
             </span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-muted text-lg max-w-2xl mx-auto">
             Mutlu müşterilerimizin deneyimlerini keşfedin
           </p>
         </div>
@@ -72,7 +72,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-2"
+              className="group glass-card-hover rounded-2xl p-8 hover:-translate-y-2"
             >
               {/* Quote Icon */}
               <div className="mb-4">
@@ -87,18 +87,18 @@ const Testimonials = () => {
               </div>
 
               {/* Testimonial Text */}
-              <p className="text-gray-300 mb-6 leading-relaxed italic">
+              <p className="text-subtle mb-6 leading-relaxed italic">
                 "{testimonial.text}"
               </p>
 
               {/* Author */}
-              <div className="flex items-center gap-3 pt-6 border-t border-gray-700/50">
+              <div className="flex items-center gap-3 pt-6 divider-glass">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center text-2xl">
                   {testimonial.image}
                 </div>
                 <div>
                   <h4 className="text-white font-semibold">{testimonial.name}</h4>
-                  <p className="text-gray-400 text-sm">{testimonial.role}</p>
+                  <p className="text-muted text-sm">{testimonial.role}</p>
                 </div>
               </div>
             </div>
@@ -107,7 +107,7 @@ const Testimonials = () => {
 
         {/* CTA */}
         <div className="mt-16 text-center">
-          <p className="text-gray-400 mb-6">Siz de mutlu müşterilerimize katılın!</p>
+          <p className="text-muted mb-6">Siz de mutlu müşterilerimize katılın!</p>
           <a
             href="#contact"
             className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-600 px-8 py-4 rounded-full text-white font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all hover:scale-105"

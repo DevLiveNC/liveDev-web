@@ -21,7 +21,7 @@ const Hero = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 glass-panel rounded-full mb-8 border-sky-500/20">
           <Sparkles className="w-4 h-4 text-sky-400" />
-          <span className="text-sm text-gray-300">Profesyonel Web Çözümleri</span>
+          <span className="text-sm text-subtle">Profesyonel Web Çözümleri</span>
         </div>
 
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
@@ -32,7 +32,7 @@ const Hero = () => {
           <span className="text-white">İşiniz İçin Hazır</span>
         </h1>
 
-        <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
+        <p className="text-lg md:text-xl text-muted mb-12 max-w-3xl mx-auto">
           Hızlı, güvenilir ve SEO uyumlu web siteleri ile işletmenizi dijital dünyada zirveye taşıyın.
           Modern teknolojiler kullanarak size özel çözümler sunuyorum.
         </p>
@@ -65,7 +65,7 @@ const Hero = () => {
               <div className="text-3xl md:text-4xl font-bold gradient-heading mb-2">
                 {stat.number}
               </div>
-              <div className="text-sm text-gray-400">{stat.label}</div>
+              <div className="text-sm text-muted">{stat.label}</div>
             </div>
           ))}
         </div>

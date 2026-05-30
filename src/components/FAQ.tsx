@@ -45,7 +45,7 @@ const FAQ = () => {
 
   return (
     <section className="py-20 section-surface relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/5 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-900/5 to-transparent"></div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -55,7 +55,7 @@ const FAQ = () => {
               Sıkça Sorulan Sorular
             </span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-muted text-lg max-w-2xl mx-auto">
             Merak ettiğiniz soruların cevaplarını burada bulabilirsiniz
           </p>
         </div>
@@ -65,7 +65,7 @@ const FAQ = () => {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-xl overflow-hidden hover:border-purple-500/50 transition-all"
+              className="glass-card-hover rounded-xl overflow-hidden"
             >
               <button
                 onClick={() => toggleFAQ(index)}
@@ -87,7 +87,7 @@ const FAQ = () => {
                 }`}
               >
                 <div className="px-6 pb-5">
-                  <p className="text-gray-400 leading-relaxed">{faq.answer}</p>
+                  <p className="text-muted leading-relaxed">{faq.answer}</p>
                 </div>
               </div>
             </div>
@@ -96,7 +96,7 @@ const FAQ = () => {
 
         {/* CTA */}
         <div className="mt-12 text-center">
-          <p className="text-gray-400 mb-6">Başka sorularınız mı var?</p>
+          <p className="text-muted mb-6">Başka sorularınız mı var?</p>
           <a
             href="#contact"
             className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-600 px-8 py-4 rounded-full text-white font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all hover:scale-105"

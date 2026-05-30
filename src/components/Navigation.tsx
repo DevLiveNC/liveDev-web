@@ -52,7 +52,7 @@ const Navigation = ({ isScrolled }: NavigationProps) => {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className="text-gray-300 hover:text-white transition-colors relative group"
+                className="text-subtle hover:text-white transition-colors relative group"
               >
                 {link.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 gradient-brand group-hover:w-full transition-all duration-300"></span>
@@ -70,7 +70,7 @@ const Navigation = ({ isScrolled }: NavigationProps) => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-800 transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-white/[0.06] backdrop-blur-sm transition-colors"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -86,7 +86,7 @@ const Navigation = ({ isScrolled }: NavigationProps) => {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className="block px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
+                className="block px-4 py-2 text-subtle hover:text-white hover:bg-white/[0.06] backdrop-blur-sm rounded-lg transition-colors"
               >
                 {link.label}
               </a>
