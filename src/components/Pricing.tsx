@@ -4,7 +4,7 @@ const Pricing = () => {
   const packages = [
     {
       name: 'Temel Paket',
-      price: '₺5,000',
+      price: '$150',
       period: 'tek seferlik',
       description: 'Küçük işletmeler ve kişisel projeler için ideal',
       features: [
@@ -12,7 +12,6 @@ const Pricing = () => {
         'Responsive tasarım',
         'Temel SEO optimizasyonu',
         'İletişim formu',
-        'Google Maps entegrasyonu',
         '1 ay ücretsiz destek',
         'Sosyal medya entegrasyonu',
       ],
@@ -21,7 +20,7 @@ const Pricing = () => {
     },
     {
       name: 'Profesyonel Paket',
-      price: '₺10,000',
+      price: '$250',
       period: 'tek seferlik',
       description: 'Büyüyen işletmeler için en popüler seçenek',
       features: [
@@ -40,7 +39,7 @@ const Pricing = () => {
     },
     {
       name: 'Premium Paket',
-      price: '₺20,000',
+      price: 'min $450+',
       period: 'tek seferlik',
       description: 'Büyük işletmeler ve e-ticaret siteleri için',
       features: [
