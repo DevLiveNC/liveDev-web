@@ -1,5 +1,5 @@
 import { Calendar, Clock, ArrowLeft, Tag } from 'lucide-react';
-import { getPostBySlug } from '../data/blogPosts';
+import { useBlogPost } from '../hooks/useBlogPosts';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import FloatingActions from './FloatingActions';
@@ -11,7 +11,15 @@ interface BlogPostPageProps {
 }
 
 const BlogPostPage = ({ slug, isScrolled }: BlogPostPageProps) => {
-  const post = getPostBySlug(slug);
+  const { post, loading } = useBlogPost(slug);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-ink flex items-center justify-center">
+        <div className="w-8 h-8 border-2 border-sky-400 border-t-transparent rounded-full animate-spin" />
+      </div>
+    );
+  }
 
   if (!post) {
     return (
