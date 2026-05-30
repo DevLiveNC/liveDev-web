@@ -1,14 +1,13 @@
 import { useRef, useState, useEffect } from 'react';
 import { Calendar, Clock, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
-import { useBlogPosts } from '../hooks/useBlogPosts';
+import { blogPosts } from '../data/blogPosts';
 
 const VISIBLE_COUNT = 3;
 
 const Blog = () => {
-  const { posts, loading } = useBlogPosts();
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(blogPosts.length > VISIBLE_COUNT);
 
   const updateScrollButtons = () => {
     const el = scrollRef.current;
@@ -27,7 +26,7 @@ const Blog = () => {
       el.removeEventListener('scroll', updateScrollButtons);
       window.removeEventListener('resize', updateScrollButtons);
     };
-  }, [posts]);
+  }, []);
 
   const scroll = (direction: 'left' | 'right') => {
     const el = scrollRef.current;
@@ -61,7 +60,7 @@ const Blog = () => {
               Son Yazılarım
             </h3>
 
-            {posts.length > VISIBLE_COUNT && (
+            {blogPosts.length > VISIBLE_COUNT && (
               <div className="flex items-center gap-2">
                 <button
                   type="button"
@@ -85,11 +84,6 @@ const Blog = () => {
             )}
           </div>
 
-          {loading ? (
-            <div className="flex justify-center py-16">
-              <div className="w-8 h-8 border-2 border-sky-400 border-t-transparent rounded-full animate-spin" />
-            </div>
-          ) : (
           <div
             ref={scrollRef}
             className="overflow-x-auto snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden [--card-w:100%] sm:[--card-w:calc((100%-2rem)/2)] lg:[--card-w:calc((100%-4rem)/3)]"
@@ -97,10 +91,10 @@ const Blog = () => {
             <div
               className="flex gap-8"
               style={{
-                width: `calc(${posts.length} * var(--card-w) + ${(posts.length - 1) * 2}rem)`,
+                width: `calc(${blogPosts.length} * var(--card-w) + ${(blogPosts.length - 1) * 2}rem)`,
               }}
             >
-              {posts.map((post) => (
+              {blogPosts.map((post) => (
                 <article
                   key={post.slug}
                   className="group glass-card-hover rounded-2xl overflow-hidden hover:-translate-y-2 snap-start shrink-0 w-[var(--card-w)]"
@@ -152,9 +146,8 @@ const Blog = () => {
               ))}
             </div>
           </div>
-          )}
 
-          {!loading && posts.length > VISIBLE_COUNT && (
+          {blogPosts.length > VISIBLE_COUNT && (
             <p className="text-faint text-sm text-center mt-4">
               Daha fazla yazı için okları kullanın veya yana kaydırın
             </p>

@@ -16,15 +16,10 @@ import Newsletter from './components/Newsletter';
 import Blog from './components/Blog';
 import BlogPostPage from './components/BlogPostPage';
 import CTABanner from './components/CTABanner';
-import AdminApp from './admin/AdminApp';
-
-type AppRoute = 'home' | 'article' | 'admin';
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [route, setRoute] = useState<AppRoute>('home');
   const [articleSlug, setArticleSlug] = useState<string | null>(null);
-  const [adminPath, setAdminPath] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,30 +33,16 @@ function App() {
   useEffect(() => {
     const parseHash = () => {
       const hash = window.location.hash;
-
-      if (hash.startsWith('#admin')) {
-        setRoute('admin');
-        setAdminPath(hash.replace('#admin', '').replace(/^\//, ''));
-        setArticleSlug(null);
-        window.scrollTo(0, 0);
-        return;
-      }
-
       if (hash.startsWith('#yazi/')) {
-        setRoute('article');
         setArticleSlug(hash.replace('#yazi/', ''));
         window.scrollTo(0, 0);
-        return;
-      }
-
-      setRoute('home');
-      setArticleSlug(null);
-      setAdminPath('');
-
-      if (hash && hash !== '#') {
-        setTimeout(() => {
-          document.querySelector(hash)?.scrollIntoView({ behavior: 'smooth' });
-        }, 50);
+      } else {
+        setArticleSlug(null);
+        if (hash && hash !== '#') {
+          setTimeout(() => {
+            document.querySelector(hash)?.scrollIntoView({ behavior: 'smooth' });
+          }, 50);
+        }
       }
     };
 
@@ -70,16 +51,13 @@ function App() {
     return () => window.removeEventListener('hashchange', parseHash);
   }, []);
 
-  if (route === 'admin') {
-    return <AdminApp path={adminPath} />;
-  }
-
-  if (route === 'article' && articleSlug) {
+  if (articleSlug) {
     return <BlogPostPage slug={articleSlug} isScrolled={isScrolled} />;
   }
 
   return (
     <div className="min-h-screen bg-ink text-slate-100 relative">
+      {/* Site-wide ambient aurora */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
         <div className="aurora-blob aurora-blob-1" />
         <div className="aurora-blob aurora-blob-2" />
