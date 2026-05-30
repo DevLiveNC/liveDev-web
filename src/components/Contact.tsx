@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 const InstagramIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -116,21 +117,22 @@ const Contact = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            <span className="gradient-heading">
-              İletişime Geçin
-            </span>
-          </h2>
-          <p className="text-muted text-lg max-w-2xl mx-auto">
-            Projeniz hakkında konuşmak için benimle iletişime geçin. Size en kısa sürede dönüş yapacağım.
-          </p>
-        </div>
+        <ScrollReveal direction="up">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              <span className="gradient-heading">
+                İletişime Geçin
+              </span>
+            </h2>
+            <p className="text-muted text-lg max-w-2xl mx-auto">
+              Projeniz hakkında konuşmak için benimle iletişime geçin. Size en kısa sürede dönüş yapacağım.
+            </p>
+          </div>
+        </ScrollReveal>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          {/* Contact Info */}
-          <div className="lg:col-span-1 space-y-6">
+          <ScrollReveal direction="left" className="lg:col-span-1">
+            <div className="space-y-6">
             {contactInfo.map((info, index) => (
               <a
                 key={index}
@@ -167,10 +169,11 @@ const Contact = () => {
                 ))}
               </div>
             </div>
-          </div>
+            </div>
+          </ScrollReveal>
 
-          {/* Contact Form */}
-          <div className="lg:col-span-2">
+          <ScrollReveal direction="right" className="lg:col-span-2">
+            <div>
             <div className="glass-card rounded-2xl p-8">
               {isSubmitted ? (
                 <div className="text-center py-12">
@@ -283,7 +286,8 @@ const Contact = () => {
                 </form>
               )}
             </div>
-          </div>
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

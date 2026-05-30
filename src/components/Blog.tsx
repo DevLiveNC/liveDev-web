@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { Calendar, Clock, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { blogPosts } from '../data/blogPosts';
+import ScrollReveal from './ScrollReveal';
 
 const VISIBLE_COUNT = 3;
 
@@ -43,18 +44,19 @@ const Blog = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/5 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-8 md:mb-16">
-          <h2 className="text-2xl md:text-5xl font-bold mb-2 md:mb-4">
-            <span className="gradient-heading">Yazılarım</span>
-          </h2>
-          <p className="text-muted text-sm md:text-lg max-w-2xl mx-auto px-2">
-            Web geliştirme, freelance çalışma ve projelerim hakkında notlar, deneyimler ve ipuçları
-          </p>
-        </div>
+        <ScrollReveal direction="up">
+          <div className="text-center mb-8 md:mb-16">
+            <h2 className="text-2xl md:text-5xl font-bold mb-2 md:mb-4">
+              <span className="gradient-heading">Yazılarım</span>
+            </h2>
+            <p className="text-muted text-sm md:text-lg max-w-2xl mx-auto px-2">
+              Web geliştirme, freelance çalışma ve projelerim hakkında notlar, deneyimler ve ipuçları
+            </p>
+          </div>
+        </ScrollReveal>
 
-        {/* Latest Posts — max 3 visible, horizontal scroll for more */}
-        <div className="mb-6 md:mb-10">
+        <ScrollReveal direction="left">
+          <div className="mb-6 md:mb-10">
           <div className="flex items-center justify-between mb-4 md:mb-8">
             <h3 className="text-base md:text-xl font-semibold text-white flex items-center gap-2 md:gap-3">
               <span className="w-1 h-5 md:h-6 bg-gradient-to-b from-sky-400 to-indigo-500 rounded-full"></span>
@@ -157,10 +159,11 @@ const Blog = () => {
               Daha fazla yazı için kaydırın
             </p>
           )}
-        </div>
+          </div>
+        </ScrollReveal>
 
-        {/* CTA */}
-        <div className="mt-6 md:mt-8 text-center">
+        <ScrollReveal direction="right" delay={100}>
+          <div className="mt-6 md:mt-8 text-center">
           <a
             href="https://www.instagram.com/yasar_kirmiziyuz/"
             target="_blank"
@@ -170,7 +173,8 @@ const Blog = () => {
             Instagram&apos;dan Takip Et
             <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
           </a>
-        </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

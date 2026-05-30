@@ -1,4 +1,5 @@
 import { ExternalLink, Code2 } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 const Portfolio = () => {
   const projects = [
@@ -45,25 +46,27 @@ const Portfolio = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/5 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
-              Projelerim
-            </span>
-          </h2>
-          <p className="text-muted text-lg max-w-2xl mx-auto">
-            Tamamladığım bazı projelere göz atın ve benzer bir proje için benimle iletişime geçin
-          </p>
-        </div>
+        <ScrollReveal direction="up">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
+                Projelerim
+              </span>
+            </h2>
+            <p className="text-muted text-lg max-w-2xl mx-auto">
+              Tamamladığım bazı projelere göz atın ve benzer bir proje için benimle iletişime geçin
+            </p>
+          </div>
+        </ScrollReveal>
 
-        {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div
+            <ScrollReveal
               key={index}
-              className="group glass-card-hover rounded-2xl overflow-hidden hover:-translate-y-2"
+              direction={index % 2 === 0 ? 'left' : 'right'}
+              delay={index * 100}
             >
+              <div className="group glass-card-hover rounded-2xl overflow-hidden hover:-translate-y-2 h-full">
               {/* Project Preview */}
               <div
                 className={`h-48 relative overflow-hidden ${
@@ -130,12 +133,13 @@ const Portfolio = () => {
                   ))}
                 </div>
               </div>
-            </div>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="mt-16 text-center">
+        <ScrollReveal direction="up" delay={100}>
+          <div className="mt-16 text-center">
           <p className="text-muted mb-6">Benzer bir projeniz mi var?</p>
           <a
             href="#contact"
@@ -143,7 +147,8 @@ const Portfolio = () => {
           >
             Hemen Başlayalım
           </a>
-        </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

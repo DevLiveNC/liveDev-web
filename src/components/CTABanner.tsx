@@ -1,4 +1,5 @@
 import { Rocket, ArrowRight } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 const CTABanner = () => {
   return (
@@ -11,6 +12,7 @@ const CTABanner = () => {
       </div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <ScrollReveal direction="up">
         <div className="glass-card rounded-3xl p-12 md:p-16 text-center">
           <div className="inline-flex items-center justify-center w-20 h-20 gradient-brand rounded-full mb-8 animate-bounce shadow-lg shadow-sky-500/20">
             <Rocket className="w-10 h-10 text-white" />
@@ -60,6 +62,7 @@ const CTABanner = () => {
             </div>
           </div>
         </div>
+        </ScrollReveal>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import { Star, Quote } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 const Testimonials = () => {
   const testimonials = [
@@ -21,25 +22,27 @@ const Testimonials = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
-              Müşteri Yorumları
-            </span>
-          </h2>
-          <p className="text-muted text-lg max-w-2xl mx-auto">
-            Mutlu müşterilerimizin deneyimlerini keşfedin
-          </p>
-        </div>
+        <ScrollReveal direction="up">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
+                Müşteri Yorumları
+              </span>
+            </h2>
+            <p className="text-muted text-lg max-w-2xl mx-auto">
+              Mutlu müşterilerimizin deneyimlerini keşfedin
+            </p>
+          </div>
+        </ScrollReveal>
 
-        {/* Testimonials Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div
+            <ScrollReveal
               key={index}
-              className="group glass-card-hover rounded-2xl p-8 hover:-translate-y-2"
+              direction={index % 2 === 0 ? 'left' : 'right'}
+              delay={index * 100}
             >
+              <div className="group glass-card-hover rounded-2xl p-8 hover:-translate-y-2 h-full">
               {/* Quote Icon */}
               <div className="mb-4">
                 <Quote className="w-10 h-10 text-blue-500/30" />
@@ -67,12 +70,13 @@ const Testimonials = () => {
                   <p className="text-muted text-sm">{testimonial.role}</p>
                 </div>
               </div>
-            </div>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="mt-16 text-center">
+        <ScrollReveal direction="up" delay={100}>
+          <div className="mt-16 text-center">
           <p className="text-muted mb-6">Siz de mutlu müşterilerimize katılın!</p>
           <a
             href="#contact"
@@ -80,7 +84,8 @@ const Testimonials = () => {
           >
             Hemen Başlayın
           </a>
-        </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

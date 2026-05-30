@@ -1,4 +1,5 @@
 import { Code2, Rocket, Shield, Zap } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 const About = () => {
   const features = [
@@ -29,20 +30,20 @@ const About = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-900/5 to-transparent"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
-              Hakkımda
-            </span>
-          </h2>
-          <p className="text-muted text-lg max-w-2xl mx-auto">
-            8 yıllık kodlama deneyimim ve 3 yıllık profesyonel web geliştirme tecrübemle, işletmeden bireye her projeye özel çözümler sunuyorum
-          </p>
-        </div>
+        <ScrollReveal direction="up">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
+                Hakkımda
+              </span>
+            </h2>
+            <p className="text-muted text-lg max-w-2xl mx-auto">
+              8 yıllık kodlama deneyimim ve 3 yıllık profesyonel web geliştirme tecrübemle, işletmeden bireye her projeye özel çözümler sunuyorum
+            </p>
+          </div>
+        </ScrollReveal>
 
-        {/* Bio Section */}
-        <div className="max-w-4xl mx-auto mb-16">
+        <ScrollReveal direction="left" className="max-w-4xl mx-auto mb-16">
           <div className="glass-card rounded-2xl p-8 md:p-12">
             <div className="flex flex-col md:flex-row gap-8 items-center">
               <div className="flex-shrink-0">
@@ -68,26 +69,28 @@ const About = () => {
               </div>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
 
-        {/* Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
-            <div
+            <ScrollReveal
               key={index}
-              className="group glass-card-hover rounded-xl p-6 hover:-translate-y-1"
+              direction={index % 2 === 0 ? 'left' : 'right'}
+              delay={index * 80}
             >
+              <div className="group glass-card-hover rounded-xl p-6 hover:-translate-y-1 h-full">
               <div className="bg-gradient-to-br from-blue-500/10 to-indigo-600/10 w-14 h-14 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <feature.icon className="w-7 h-7 text-blue-400" />
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
               <p className="text-muted text-sm leading-relaxed">{feature.description}</p>
-            </div>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
 
-        {/* Skills */}
-        <div className="mt-16 text-center">
+        <ScrollReveal direction="up" delay={100}>
+          <div className="mt-16 text-center">
           <h3 className="text-2xl font-bold text-white mb-8">Kullandığım Teknolojiler</h3>
           <div className="flex flex-wrap justify-center gap-3">
             {['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Node.js', 'Vercel', 'Git', 'Figma', 'SEO', 'Responsive Design'].map((skill) => (
@@ -99,7 +102,8 @@ const About = () => {
               </span>
             ))}
           </div>
-        </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

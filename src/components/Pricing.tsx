@@ -1,4 +1,5 @@
 import { Check, Star } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 const Pricing = () => {
   const packages = [
@@ -68,24 +69,28 @@ const Pricing = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
-              Paketlerim
-            </span>
-          </h2>
-          <p className="text-muted text-lg max-w-2xl mx-auto">
-            İhtiyacınıza uygun paketi seçin veya özel bir teklif için benimle iletişime geçin
-          </p>
-        </div>
+        <ScrollReveal direction="up">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
+                Paketlerim
+              </span>
+            </h2>
+            <p className="text-muted text-lg max-w-2xl mx-auto">
+              İhtiyacınıza uygun paketi seçin veya özel bir teklif için benimle iletişime geçin
+            </p>
+          </div>
+        </ScrollReveal>
 
-        {/* Pricing Grid */}
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {packages.map((pkg, index) => (
-            <div
+            <ScrollReveal
               key={index}
-              className={`relative glass-card rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 ${
+              direction={index === 0 ? 'left' : index === 2 ? 'right' : 'up'}
+              delay={index * 100}
+            >
+              <div
+              className={`relative glass-card rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 h-full ${
                 pkg.popular
                   ? 'border-sky-400/40 shadow-xl shadow-sky-500/20 md:scale-105 lg:scale-110'
                   : 'hover:border-sky-400/25'
@@ -134,12 +139,13 @@ const Pricing = () => {
               >
                 Başlayın
               </a>
-            </div>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
 
-        {/* Custom Package CTA */}
-        <div className="mt-16 text-center">
+        <ScrollReveal direction="up" delay={150}>
+          <div className="mt-16 text-center">
           <div className="max-w-2xl mx-auto glass-card rounded-2xl p-8">
             <h3 className="text-2xl font-bold text-white mb-3">Özel Paket İhtiyacınız mı Var?</h3>
             <p className="text-muted mb-6">
@@ -152,7 +158,8 @@ const Pricing = () => {
               Özel Teklif Alın
             </a>
           </div>
-        </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

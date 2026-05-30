@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -48,25 +49,27 @@ const FAQ = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-900/5 to-transparent"></div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
-              Sıkça Sorulan Sorular
-            </span>
-          </h2>
-          <p className="text-muted text-lg max-w-2xl mx-auto">
-            Merak ettiğiniz soruların cevaplarını burada bulabilirsiniz
-          </p>
-        </div>
+        <ScrollReveal direction="up">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
+                Sıkça Sorulan Sorular
+              </span>
+            </h2>
+            <p className="text-muted text-lg max-w-2xl mx-auto">
+              Merak ettiğiniz soruların cevaplarını burada bulabilirsiniz
+            </p>
+          </div>
+        </ScrollReveal>
 
-        {/* FAQ List */}
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div
+            <ScrollReveal
               key={index}
-              className="glass-card-hover rounded-xl overflow-hidden"
+              direction={index % 2 === 0 ? 'left' : 'right'}
+              delay={index * 50}
             >
+              <div className="glass-card-hover rounded-xl overflow-hidden">
               <button
                 onClick={() => toggleFAQ(index)}
                 className="w-full px-6 py-5 flex items-center justify-between gap-4 text-left"
@@ -90,12 +93,13 @@ const FAQ = () => {
                   <p className="text-muted leading-relaxed">{faq.answer}</p>
                 </div>
               </div>
-            </div>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="mt-12 text-center">
+        <ScrollReveal direction="up" delay={100}>
+          <div className="mt-12 text-center">
           <p className="text-muted mb-6">Başka sorularınız mı var?</p>
           <a
             href="#contact"
@@ -103,7 +107,8 @@ const FAQ = () => {
           >
             Bizimle İletişime Geçin
           </a>
-        </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

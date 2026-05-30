@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { TrendingUp, Users, Award, Zap } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 const Stats = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -99,10 +100,12 @@ const Stats = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
-            <div
+            <ScrollReveal
               key={index}
-              className="group glass-card-hover rounded-2xl p-8 hover:-translate-y-2 text-center"
+              direction={index % 2 === 0 ? 'left' : 'right'}
+              delay={index * 100}
             >
+              <div className="group glass-card-hover rounded-2xl p-8 hover:-translate-y-2 text-center h-full">
               <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${stat.gradient} rounded-xl mb-4 group-hover:scale-110 transition-transform`}>
                 <stat.icon className="w-8 h-8 text-white" />
               </div>
@@ -110,7 +113,8 @@ const Stats = () => {
                 {isVisible ? <Counter end={stat.number} suffix={stat.suffix} /> : '0' + stat.suffix}
               </div>
               <div className="text-muted font-medium">{stat.label}</div>
-            </div>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

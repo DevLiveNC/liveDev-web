@@ -1,4 +1,5 @@
 import { Globe, Smartphone, Search, Paintbrush, ShoppingCart, Wrench } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 const Services = () => {
   const services = [
@@ -49,25 +50,27 @@ const Services = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
-              Hizmetlerim
-            </span>
-          </h2>
-          <p className="text-muted text-lg max-w-2xl mx-auto">
-            İşletmenizin ihtiyaçlarına özel, kapsamlı web çözümleri sunuyorum
-          </p>
-        </div>
+        <ScrollReveal direction="up">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
+                Hizmetlerim
+              </span>
+            </h2>
+            <p className="text-muted text-lg max-w-2xl mx-auto">
+              İşletmenizin ihtiyaçlarına özel, kapsamlı web çözümleri sunuyorum
+            </p>
+          </div>
+        </ScrollReveal>
 
-        {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div
+            <ScrollReveal
               key={index}
-              className="group glass-card-hover rounded-2xl p-8 hover:-translate-y-2"
+              direction={index % 2 === 0 ? 'left' : 'right'}
+              delay={index * 80}
             >
+              <div className="group glass-card-hover rounded-2xl p-8 hover:-translate-y-2 h-full">
               {/* Icon */}
               <div className="bg-gradient-to-br from-sky-500/20 to-indigo-600/20 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <service.icon className="w-8 h-8 text-blue-400" />
@@ -86,19 +89,21 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="mt-16 text-center">
+        <ScrollReveal direction="up" delay={100}>
+          <div className="mt-16 text-center">
           <a
             href="#contact"
             className="inline-flex items-center gap-2 btn-brand px-8 py-4"
           >
             Ücretsiz Teklif Alın
           </a>
-        </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
