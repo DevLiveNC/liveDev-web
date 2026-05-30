@@ -3,46 +3,12 @@ import { Star, Quote } from 'lucide-react';
 const Testimonials = () => {
   const testimonials = [
     {
-      name: 'Ahmet Yılmaz',
-      role: 'CEO, TechStart',
-      image: '👨‍💼',
+      name: 'Ali Ekren',
+      role: 'Fitness Koçu',
+      image: '💪',
       rating: 5,
-      text: 'Harika bir iş çıkardı! Web sitemiz tam istediğimiz gibi oldu. Hızlı, profesyonel ve müşteri odaklı bir hizmet aldık.',
-    },
-    {
-      name: 'Ayşe Demir',
-      role: 'Kurucu, E-Shop',
-      image: '👩‍💼',
-      rating: 5,
-      text: 'E-ticaret sitemiz için mükemmel bir çözüm üretti. Satışlarımız %200 arttı. Kesinlikle tavsiye ediyorum!',
-    },
-    {
-      name: 'Mehmet Kaya',
-      role: 'Restoran Sahibi',
-      image: '👨‍🍳',
-      rating: 5,
-      text: 'Modern ve kullanıcı dostu bir web sitesi. Müşterilerimiz artık online sipariş verebiliyor. Çok memnunuz!',
-    },
-    {
-      name: 'Zeynep Şahin',
-      role: 'Freelance Tasarımcı',
-      image: '👩‍🎨',
-      rating: 5,
-      text: 'Portfolyo sitem harika oldu. Artık çok daha profesyonel görünüyorum ve daha fazla müşteri kazanıyorum.',
-    },
-    {
-      name: 'Can Özkan',
-      role: 'Emlak Danışmanı',
-      image: '👨‍💼',
-      rating: 5,
-      text: 'Gayrimenkul sitemiz için harika bir platform oluşturdu. İlanlarımızı kolayca yönetebiliyoruz.',
-    },
-    {
-      name: 'Elif Arslan',
-      role: 'Blog Yazarı',
-      image: '👩‍💻',
-      rating: 5,
-      text: 'Blog sitem çok hızlı ve SEO dostu. Google\'da üst sıralara çıktım. Teşekkürler!',
+      text: 'İsteklerim üzerine örnek görseller attığım siteyi benim attığım halinden çok daha iyi fikirleri ile yaptı, ve inanılmaz güzel bir sonuç ortaya koydu. Kesinlikle tavsiye ederim, kaliteli ve hızlı bir iş oldu. Teşekkürler Yaşar.',
+ 
     },
   ];
 
