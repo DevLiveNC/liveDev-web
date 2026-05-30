@@ -39,7 +39,7 @@ const FloatingActions = () => {
             href={action.link}
             target="_blank"
             rel="noopener noreferrer"
-            className={`group flex items-center gap-3 bg-gradient-to-r ${action.color} text-white px-4 py-3 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110`}
+            className={`group fab-action bg-gradient-to-r ${action.color}`}
             style={{ animationDelay: `${index * 50}ms` }}
           >
             <action.icon className="w-5 h-5" />
@@ -51,7 +51,7 @@ const FloatingActions = () => {
       {/* Main Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all hover:scale-110 group"
+        className="fab-brand group"
       >
         {isOpen ? (
           <X className="w-6 h-6 text-white" />

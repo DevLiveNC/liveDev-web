@@ -46,15 +46,13 @@ const FAQ = () => {
 
   return (
     <section className="py-20 section-surface relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-900/5 to-transparent"></div>
+      <div className="absolute inset-0 section-overlay-indigo"></div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal direction="up">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
-                Sıkça Sorulan Sorular
-              </span>
+              <span className="gradient-heading">Sıkça Sorulan Sorular</span>
             </h2>
             <p className="text-muted text-lg max-w-2xl mx-auto">
               Merak ettiğiniz soruların cevaplarını burada bulabilirsiniz
@@ -69,17 +67,17 @@ const FAQ = () => {
               direction={index % 2 === 0 ? 'left' : 'right'}
               delay={index * 50}
             >
-              <div className="glass-card-hover rounded-xl overflow-hidden">
+              <div className="card-sm overflow-hidden">
               <button
                 onClick={() => toggleFAQ(index)}
                 className="w-full px-6 py-5 flex items-center justify-between gap-4 text-left"
               >
                 <span className="text-white font-semibold text-lg">{faq.question}</span>
-                <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-blue-500/20 to-cyan-600/20 rounded-lg flex items-center justify-center">
+                <div className="flex-shrink-0 w-8 h-8 icon-box-brand-strong">
                   {openIndex === index ? (
-                    <Minus className="w-5 h-5 text-cyan-400" />
+                    <Minus className="w-5 h-5 text-accent" />
                   ) : (
-                    <Plus className="w-5 h-5 text-blue-400" />
+                    <Plus className="w-5 h-5 text-brand-icon" />
                   )}
                 </div>
               </button>

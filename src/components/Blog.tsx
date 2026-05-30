@@ -41,7 +41,7 @@ const Blog = () => {
 
   return (
     <section id="yazilarim" className="py-12 md:py-20 section-surface relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/5 to-transparent"></div>
+      <div className="absolute inset-0 section-overlay-blue"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal direction="up">
@@ -59,7 +59,7 @@ const Blog = () => {
           <div className="mb-6 md:mb-10">
           <div className="flex items-center justify-between mb-4 md:mb-8">
             <h3 className="text-base md:text-xl font-semibold text-white flex items-center gap-2 md:gap-3">
-              <span className="w-1 h-5 md:h-6 bg-gradient-to-b from-sky-400 to-indigo-500 rounded-full"></span>
+              <span className="section-accent-bar"></span>
               Son Yazılarım
             </h3>
 
@@ -70,7 +70,7 @@ const Blog = () => {
                   onClick={() => scroll('left')}
                   disabled={!canScrollLeft}
                   aria-label="Önceki yazılar"
-                  className="w-8 h-8 md:w-10 md:h-10 icon-box-glass rounded-lg flex items-center justify-center text-white disabled:opacity-30 disabled:cursor-not-allowed hover:border-sky-400/30 transition-all"
+                  className="w-8 h-8 md:w-10 md:h-10 icon-box flex items-center justify-center text-white disabled:opacity-30 disabled:cursor-not-allowed hover:border-brand transition-all"
                 >
                   <ChevronLeft className="w-4 h-4 md:w-5 md:h-5" />
                 </button>
@@ -79,7 +79,7 @@ const Blog = () => {
                   onClick={() => scroll('right')}
                   disabled={!canScrollRight}
                   aria-label="Sonraki yazılar"
-                  className="w-8 h-8 md:w-10 md:h-10 icon-box-glass rounded-lg flex items-center justify-center text-white disabled:opacity-30 disabled:cursor-not-allowed hover:border-sky-400/30 transition-all"
+                  className="w-8 h-8 md:w-10 md:h-10 icon-box flex items-center justify-center text-white disabled:opacity-30 disabled:cursor-not-allowed hover:border-brand transition-all"
                 >
                   <ChevronRight className="w-4 h-4 md:w-5 md:h-5" />
                 </button>
@@ -101,7 +101,7 @@ const Blog = () => {
               {blogPosts.map((post) => (
                 <article
                   key={post.slug}
-                  className="group glass-card-hover rounded-xl md:rounded-2xl overflow-hidden md:hover:-translate-y-2 snap-start shrink-0 w-[var(--card-w)]"
+                  className="group card-sm md:rounded-card-lg overflow-hidden md:hover:-translate-y-2 snap-start shrink-0 w-[var(--card-w)]"
                 >
                   <div className="h-28 sm:h-36 md:h-48 relative overflow-hidden bg-ink-card">
                     <img
@@ -112,7 +112,7 @@ const Blog = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                     <div className={`absolute inset-0 bg-gradient-to-br ${post.gradient} opacity-20 mix-blend-overlay`} />
                     <div className="absolute top-2 left-2 md:top-4 md:left-4">
-                      <span className="px-2 py-0.5 md:px-3 md:py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-[10px] md:text-xs font-medium">
+                      <span className="badge-glass px-2 py-0.5 md:px-3 md:py-1 text-[10px] md:text-xs">
                         {post.category}
                       </span>
                     </div>
@@ -120,7 +120,7 @@ const Blog = () => {
 
                   <div className="p-3.5 sm:p-5 md:p-6">
                     <a href={`#yazi/${post.slug}`} className="block">
-                      <h4 className="text-sm sm:text-base md:text-xl font-bold text-white mb-1.5 md:mb-3 group-hover:text-sky-400 transition-colors line-clamp-2 leading-snug">
+                      <h4 className="text-sm sm:text-base md:text-xl font-bold text-white mb-1.5 md:mb-3 card-title-hover line-clamp-2 leading-snug">
                         {post.title}
                       </h4>
                       <p className="text-muted text-xs sm:text-sm mb-2 md:mb-4 line-clamp-2 md:line-clamp-3 leading-relaxed">
@@ -142,7 +142,7 @@ const Blog = () => {
                       </div>
                       <a
                         href={`#yazi/${post.slug}`}
-                        className="text-sky-400 hover:text-sky-300 transition-colors p-1"
+                        className="text-brand hover:text-sky-300 transition-colors p-1"
                         aria-label={`${post.title} yazısını oku`}
                       >
                         <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />

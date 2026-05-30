@@ -25,7 +25,7 @@ const Newsletter = () => {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <ScrollReveal direction="up">
-        <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full mb-6">
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-pill mb-6">
           <InstagramIcon className="w-8 h-8 text-white" />
         </div>
 
@@ -40,7 +40,7 @@ const Newsletter = () => {
           href="https://www.instagram.com/yasar_kirmiziyuz/"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 px-8 py-4 bg-[#070b14]/80 backdrop-blur-sm text-white rounded-full font-medium hover:bg-[#070b14] transition-all hover:scale-105 border border-white/10"
+          className="btn-newsletter"
         >
           <InstagramIcon className="w-5 h-5" />
           <span>@yasar_kirmiziyuz — Takip Et</span>

@@ -5,16 +5,16 @@ const CTABanner = () => {
   return (
     <section className="py-20 section-surface relative overflow-hidden">
       {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-sky-600/15 via-indigo-600/10 to-blue-600/15"></div>
+      <div className="absolute inset-0 section-cta-glow"></div>
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 glow-orb-sky animate-pulse"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 glow-orb-indigo animate-pulse delay-1000"></div>
       </div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal direction="up">
-        <div className="glass-card rounded-3xl p-12 md:p-16 text-center">
-          <div className="inline-flex items-center justify-center w-20 h-20 gradient-brand rounded-full mb-8 animate-bounce shadow-lg shadow-sky-500/20">
+        <div className="card-panel p-12 md:p-16 text-center">
+          <div className="inline-flex items-center justify-center w-20 h-20 gradient-brand rounded-pill mb-8 animate-bounce shadow-brand">
             <Rocket className="w-10 h-10 text-white" />
           </div>
 

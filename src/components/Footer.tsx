@@ -60,17 +60,17 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#050810] border-t border-sky-500/10">
+    <footer className="footer-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Main Footer Content */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="lg:col-span-1">
             <a href="#home" className="flex items-center space-x-2 mb-4" onClick={(e) => scrollToSection(e, '#home')}>
-              <div className="bg-gradient-to-br from-blue-500 to-cyan-600 p-2 rounded-lg">
+              <div className="logo-box-lg">
                 <Code2 className="w-6 h-6 text-white" />
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
+              <span className="text-xl font-bold gradient-heading">
                 LiveDev
               </span>
             </a>
@@ -85,7 +85,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.name}
-                  className={`w-10 h-10 icon-box-glass rounded-lg flex items-center justify-center transition-all ${social.hoverClass}`}
+                  className={`w-10 h-10 icon-box transition-all ${social.hoverClass}`}
                 >
                   <social.icon className="w-5 h-5 text-white" />
                 </a>
@@ -102,7 +102,7 @@ const Footer = () => {
                   <a
                     href={link.href}
                     onClick={(e) => scrollToSection(e, link.href)}
-                    className="text-muted hover:text-sky-300 transition-colors text-sm"
+                    className="text-link text-sm"
                   >
                     {link.name}
                   </a>
@@ -120,7 +120,7 @@ const Footer = () => {
                   <a
                     href={link.href}
                     onClick={(e) => scrollToSection(e, link.href)}
-                    className="text-muted hover:text-sky-300 transition-colors text-sm"
+                    className="text-link text-sm"
                   >
                     {link.name}
                   </a>
@@ -137,7 +137,7 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-muted hover:text-sky-300 transition-colors text-sm"
+                    className="text-link text-sm"
                   >
                     {link.name}
                   </a>

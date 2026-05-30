@@ -17,7 +17,7 @@ const Pricing = () => {
         'Sosyal medya entegrasyonu',
       ],
       popular: false,
-      gradient: 'from-slate-600 to-slate-700',
+      gradient: 'gradient-pack-neutral',
     },
     {
       name: 'Profesyonel Paket',
@@ -36,7 +36,7 @@ const Pricing = () => {
         'SSL sertifikası',
       ],
       popular: true,
-      gradient: 'from-blue-600 to-cyan-600',
+      gradient: 'gradient-pack-brand',
     },
     {
       name: 'Premium Paket',
@@ -56,25 +56,22 @@ const Pricing = () => {
         '7/24 teknik destek',
       ],
       popular: false,
-      gradient: 'from-sky-600 to-indigo-600',
+      gradient: 'gradient-pack-premium',
     },
   ];
 
   return (
-    <section id="pricing" className="py-20 bg-gradient-to-b from-[#0a1020] via-[#0d1a35] to-[#0a1020] relative overflow-hidden">
-      {/* Background Elements */}
+    <section id="pricing" className="py-20 section-deep relative overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 glow-orb-indigo-soft"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-96 h-96 glow-orb-blue"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal direction="up">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
-                Paketlerim
-              </span>
+              <span className="gradient-heading">Paketlerim</span>
             </h2>
             <p className="text-muted text-lg max-w-2xl mx-auto">
               İhtiyacınıza uygun paketi seçin veya özel bir teklif için benimle iletişime geçin
@@ -90,16 +87,14 @@ const Pricing = () => {
               delay={index * 100}
             >
               <div
-              className={`relative glass-card rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 h-full ${
-                pkg.popular
-                  ? 'border-sky-400/40 shadow-xl shadow-sky-500/20 md:scale-105 lg:scale-110'
-                  : 'hover:border-sky-400/25'
+              className={`relative glass-card p-8 transition-all duration-300 hover:-translate-y-2 h-full ${
+                pkg.popular ? 'card-popular' : ''
               }`}
             >
               {/* Popular Badge */}
               {pkg.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-gradient-to-r from-sky-500 to-indigo-600 px-4 py-1 rounded-full flex items-center gap-1">
+                  <div className="badge-popular">
                     <Star className="w-4 h-4 text-white fill-white" />
                     <span className="text-white text-sm font-medium">En Popüler</span>
                   </div>
@@ -111,7 +106,7 @@ const Pricing = () => {
                 <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
                 <p className="text-muted text-sm mb-4">{pkg.description}</p>
                 <div className="mb-2">
-                  <span className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
+                  <span className="text-4xl md:text-5xl font-bold gradient-price">
                     {pkg.price}
                   </span>
                 </div>
@@ -122,7 +117,7 @@ const Pricing = () => {
               <ul className="space-y-3 mb-8">
                 {pkg.features.map((feature, fIndex) => (
                   <li key={fIndex} className="flex items-start gap-3">
-                    <div className={`flex-shrink-0 mt-0.5 bg-gradient-to-br ${pkg.gradient} w-5 h-5 rounded-full flex items-center justify-center`}>
+                    <div className={`flex-shrink-0 mt-0.5 ${pkg.gradient} w-5 h-5 rounded-pill flex items-center justify-center`}>
                       <Check className="w-3 h-3 text-white" />
                     </div>
                     <span className="text-subtle text-sm">{feature}</span>
@@ -146,7 +141,7 @@ const Pricing = () => {
 
         <ScrollReveal direction="up" delay={150}>
           <div className="mt-16 text-center">
-          <div className="max-w-2xl mx-auto glass-card rounded-2xl p-8">
+          <div className="max-w-2xl mx-auto glass-card p-8">
             <h3 className="text-2xl font-bold text-white mb-3">Özel Paket İhtiyacınız mı Var?</h3>
             <p className="text-muted mb-6">
               Yukarıdaki paketler size uygun değilse, özel ihtiyaçlarınız için birlikte özel bir paket oluşturabiliriz.

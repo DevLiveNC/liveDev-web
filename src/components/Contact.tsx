@@ -112,8 +112,8 @@ const Contact = () => {
     <section id="contact" className="py-20 section-surface relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/4 right-0 w-96 h-96 glow-orb-blue"></div>
+        <div className="absolute bottom-1/4 left-0 w-96 h-96 glow-orb-indigo-soft"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -137,11 +137,11 @@ const Contact = () => {
               <a
                 key={index}
                 href={info.link}
-                className="block glass-card-hover rounded-xl p-6 hover:scale-105"
+                className="block card-sm p-6 hover:scale-105"
               >
                 <div className="flex items-start gap-4">
-              <div className="bg-gradient-to-br from-blue-500/20 to-cyan-600/20 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                <info.icon className="w-6 h-6 text-blue-400" />
+              <div className="icon-box-brand-strong w-12 h-12 flex-shrink-0">
+                <info.icon className="w-6 h-6 text-brand-icon" />
               </div>
                   <div>
                     <h3 className="text-white font-semibold mb-1">{info.title}</h3>
@@ -152,7 +152,7 @@ const Contact = () => {
             ))}
 
             {/* Social Links */}
-            <div className="glass-card rounded-xl p-6">
+            <div className="glass-card rounded-card p-6">
               <h3 className="text-white font-semibold mb-4">Sosyal Medya</h3>
               <div className="flex gap-3">
                 {socialLinks.map((social) => (
@@ -162,7 +162,7 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.name}
-                    className={`w-12 h-12 icon-box-glass rounded-lg flex items-center justify-center transition-all ${social.hoverClass}`}
+                    className={`w-12 h-12 icon-box transition-all ${social.hoverClass}`}
                   >
                     <social.icon className="w-6 h-6 text-white" />
                   </a>
@@ -174,7 +174,7 @@ const Contact = () => {
 
           <ScrollReveal direction="right" className="lg:col-span-2">
             <div>
-            <div className="glass-card rounded-2xl p-8">
+            <div className="glass-card p-8">
               {isSubmitted ? (
                 <div className="text-center py-12">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-green-500/20 rounded-full mb-4">
@@ -196,7 +196,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="input-glass w-full px-4 py-3 rounded-lg"
+                        className="field"
                         placeholder="Adınız Soyadınız"
                       />
                     </div>
@@ -210,7 +210,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="input-glass w-full px-4 py-3 rounded-lg"
+                        className="field"
                         placeholder="ornek@email.com"
                       />
                     </div>
@@ -226,7 +226,7 @@ const Contact = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="input-glass w-full px-4 py-3 rounded-lg"
+                        className="field"
                         placeholder="+90 533 842 63 83"
                       />
                     </div>
@@ -239,7 +239,7 @@ const Contact = () => {
                         value={formData.service}
                         onChange={handleChange}
                         required
-                        className="input-glass w-full px-4 py-3 rounded-lg"
+                        className="field"
                       >
                         <option value="">Seçiniz</option>
                         <option value="web">Web Sitesi Geliştirme</option>
@@ -261,7 +261,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       rows={6}
-                      className="input-glass w-full px-4 py-3 rounded-lg resize-none"
+                      className="field resize-none"
                       placeholder="Projeniz hakkında detayları paylaşın..."
                     ></textarea>
                   </div>
