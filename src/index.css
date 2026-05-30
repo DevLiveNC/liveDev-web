@@ -1,12 +1,23 @@
 @import "tailwindcss";
 
+@theme {
+  --color-ink: #070b14;
+  --color-ink-soft: #0a1020;
+  --color-ink-card: #0d1528;
+  --color-brand: #3b82f6;
+  --color-brand-light: #60a5fa;
+  --color-sky: #38bdf8;
+  --color-indigo-glow: #6366f1;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     @apply antialiased;
+    background-color: var(--color-ink);
   }
 }
 
@@ -14,6 +25,88 @@
   .delay-1000 {
     animation-delay: 1s;
   }
+
+  .gradient-heading {
+    @apply bg-gradient-to-r from-sky-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent;
+  }
+
+  .gradient-brand {
+    @apply bg-gradient-to-r from-sky-500 via-blue-500 to-indigo-600;
+  }
+
+  .glass-panel {
+    @apply bg-white/[0.04] backdrop-blur-xl border border-white/10;
+  }
+
+  .glass-nav {
+    @apply bg-[#070b14]/75 backdrop-blur-2xl border-b border-sky-500/10 shadow-[0_8px_32px_rgba(56,189,248,0.08)];
+  }
+
+  .btn-brand {
+    @apply bg-gradient-to-r from-sky-500 via-blue-500 to-indigo-600 text-white font-medium rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-sky-500/30 hover:scale-105;
+  }
+
+  .section-surface {
+    @apply bg-[#0a1020]/90;
+  }
+}
+
+/* Aurora ambient blobs */
+@keyframes aurora-drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(60px, -40px) scale(1.08); }
+  66% { transform: translate(-40px, 30px) scale(0.95); }
+}
+
+@keyframes aurora-drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-70px, 50px) scale(1.12); }
+}
+
+@keyframes aurora-drift-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40% { transform: translate(50px, 60px) scale(1.05); }
+  80% { transform: translate(-30px, -40px) scale(0.92); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.65; }
+}
+
+.aurora-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  animation: pulse-glow 8s ease-in-out infinite;
+}
+
+.aurora-blob-1 {
+  top: -10%;
+  left: -5%;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.22) 0%, transparent 70%);
+  animation: aurora-drift-1 18s ease-in-out infinite, pulse-glow 8s ease-in-out infinite;
+}
+
+.aurora-blob-2 {
+  top: 35%;
+  right: -8%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, transparent 70%);
+  animation: aurora-drift-2 22s ease-in-out infinite, pulse-glow 10s ease-in-out infinite 2s;
+}
+
+.aurora-blob-3 {
+  bottom: -5%;
+  left: 30%;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
+  animation: aurora-drift-3 20s ease-in-out infinite, pulse-glow 9s ease-in-out infinite 1s;
 }
 
 /* Custom scrollbar */
@@ -22,13 +115,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-900;
+  background: #070b14;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gradient-to-b from-blue-500 to-cyan-600 rounded-full;
+  background: linear-gradient(to bottom, #38bdf8, #6366f1);
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply from-blue-400 to-cyan-500;
+  background: linear-gradient(to bottom, #60a5fa, #818cf8);
 }

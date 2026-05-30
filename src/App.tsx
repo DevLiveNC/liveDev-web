@@ -29,23 +29,32 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-100">
-      <Navigation isScrolled={isScrolled} />
-      <Hero />
-      <About />
-      <Stats />
-      <Services />
-      <Portfolio />
-      <Testimonials />
-      <Pricing />
-      <FAQ />
-      <Blog />
-      <CTABanner />
-      <Newsletter />
-      <Contact />
-      <Footer />
-      <FloatingActions />
-      <ScrollToTop />
+    <div className="min-h-screen bg-ink text-gray-100 relative">
+      {/* Site-wide ambient aurora */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div className="aurora-blob aurora-blob-1" />
+        <div className="aurora-blob aurora-blob-2" />
+        <div className="aurora-blob aurora-blob-3" />
+      </div>
+
+      <div className="relative z-10">
+        <Navigation isScrolled={isScrolled} />
+        <Hero />
+        <About />
+        <Stats />
+        <Services />
+        <Portfolio />
+        <Testimonials />
+        <Pricing />
+        <FAQ />
+        <Blog />
+        <CTABanner />
+        <Newsletter />
+        <Contact />
+        <Footer />
+        <FloatingActions />
+        <ScrollToTop />
+      </div>
     </div>
   );
 }

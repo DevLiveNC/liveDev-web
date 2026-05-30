@@ -2,7 +2,7 @@ import { Rocket, ArrowRight } from 'lucide-react';
 
 const CTABanner = () => {
   return (
-    <section className="py-20 bg-gray-900 relative overflow-hidden">
+    <section className="py-20 section-surface relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-pink-600/20"></div>
       <div className="absolute inset-0">
