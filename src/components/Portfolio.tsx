@@ -10,11 +10,12 @@ const Portfolio = () => {
       gradient: 'from-blue-500 to-cyan-500',
     },
     {
-      title: 'Kurumsal Web Sitesi',
-      category: 'Corporate',
-      description: 'Profesyonel kurumsal web sitesi. SEO optimize, hızlı ve responsive tasarım.',
-      tags: ['React', 'TypeScript', 'SEO', 'CMS'],
-      gradient: 'from-purple-500 to-pink-500',
+      title: 'EkrenFit — Spor Koçu Web Sitesi',
+      category: 'Fitness',
+      description: 'Profesyonel fitness koçu Ali Ekren için hazırladığım kişisel marka sitesi. Paketler, dönüşüm hikayeleri ve iletişim formuyla danışan kazanımına odaklanan modern bir yapı.',
+      tags: ['React', 'TypeScript', 'Responsive', 'SEO'],
+      preview: '/portfolio/fitekren-preview.jpg',
+      url: 'https://fitekren.org',
     },
     {
       title: 'Restoran Web Sitesi',
@@ -70,14 +71,39 @@ const Portfolio = () => {
               key={index}
               className="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-2"
             >
-              {/* Project Image Placeholder */}
-              <div className={`h-48 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
+              {/* Project Preview */}
+              <div
+                className={`h-48 relative overflow-hidden ${
+                  'preview' in project && project.preview
+                    ? 'bg-gray-800'
+                    : `bg-gradient-to-br ${project.gradient}`
+                }`}
+              >
+                {'preview' in project && project.preview ? (
+                  <img
+                    src={project.preview}
+                    alt={`${project.title} ön izlemesi`}
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : null}
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                   <div className="flex gap-4">
-                    <button className="bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/30 transition-all">
-                      <ExternalLink className="w-5 h-5 text-white" />
-                    </button>
+                    {'url' in project && project.url ? (
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/30 transition-all"
+                        aria-label={`${project.title} sitesini aç`}
+                      >
+                        <ExternalLink className="w-5 h-5 text-white" />
+                      </a>
+                    ) : (
+                      <button className="bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/30 transition-all">
+                        <ExternalLink className="w-5 h-5 text-white" />
+                      </button>
+                    )}
                     <button className="bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/30 transition-all">
                       <Code2 className="w-5 h-5 text-white" />
                     </button>
