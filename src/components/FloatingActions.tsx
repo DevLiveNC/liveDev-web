@@ -9,17 +9,11 @@ const FloatingActions = () => {
       icon: MessageCircle,
       label: 'WhatsApp',
       color: 'from-green-500 to-green-600',
-      link: 'https://wa.me/905551234567?text=Merhaba,%20web%20sitesi%20hakkında%20bilgi%20almak%20istiyorum',
-    },
-    {
-      icon: Send,
-      label: 'Telegram',
-      color: 'from-blue-500 to-blue-600',
-      link: 'https://t.me/yourusername',
+      link: 'https://wa.me/905338426383?text=Merhaba,%20web%20sitesi%20hakkında%20bilgi%20almak%20istiyorum',
     },
     {
       icon: Mail,
-      label: 'Email',
+      label: 'E-mail',
       color: 'from-purple-500 to-purple-600',
       link: 'mailto:snkirmiziyuzyasar61@gmail.com',
     },
@@ -27,7 +21,7 @@ const FloatingActions = () => {
       icon: Phone,
       label: 'Telefon',
       color: 'from-orange-500 to-orange-600',
-      link: 'tel:+905551234567',
+      link: 'tel:+905338426383',
     },
   ];
 
